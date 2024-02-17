@@ -1,0 +1,38 @@
+
+<app-navbar></app-navbar>
+
+<div class="login-page">
+    <div class="background-image"></div>
+
+    <div class="left-section">
+        <div class="large-text">
+            <h3>Lets Get You back</h3>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <div class="blurry-background"></div>
+
+        <div class="login">
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                <div><h3>{{ title }}</h3></div>
+                
+                <div class="form-input">
+                    <label class="">Enter Email:</label>
+                    <input type="email" formControlName="email">
+                    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">Invalid Email Format</div>
+                </div>
+                
+                <div class="form-input">
+                    <label class="">Enter Password:</label>
+                    <input type="password" formControlName="password">
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">This is Required</div>
+                </div>
+                
+                <div class="form-input">
+                    <input type="submit" [disabled]="loginForm.invalid" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

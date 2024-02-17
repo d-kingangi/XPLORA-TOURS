@@ -1,0 +1,186 @@
+Xplora is a tours and travels platform that aims to simplify the travel experience for users by providing a
+one stop solution for discovering, booking, and enjoying tours around Kenya. These could include hikes,
+cultural excursions, or weekend getaways.
+You are tasked to build this solution.
+Requirements
+Users
+1. Create an account.
+2. Login
+3. Manage profiles and password reset.
+4. Secure authentication using JWT.
+5. Personalized dashboard for users to track their bookings and reviews.
+Admin
+1. Admin should be able to manage tours (add, soft-delete, update).
+2. Can manage their profiles.
+3. Can manage the user accounts.
+Tours
+1. Create new events, including destination, duration, price, and tour type.
+2. Display available events.
+3. Allow users to search for tours, filter based on tour type.
+4. Enable users to book tours.
+5. Users should be able to leave reviews for a tour they have experienced (reviews should be open
+only after duration when the tour is happening)
+
+Stacks
+Frontend – Angular
+Backend – Node
+
+uizard 
+duncanking'ang'i@teach2give.com
+enj##344re4#""34645tw@!#!oyin
+
+Frontend - Angular:
+
+User Authentication:
+Implement a user registration system allowing users to create accounts securely.
+Enable login functionality with proper error handling and user feedback.
+Implement a password reset mechanism for users who forget their passwords.
+User Profiles and Dashboard:
+Allow users to manage their profiles, including updating personal information and changing passwords.
+Create a personalized dashboard where users can track their bookings and leave reviews for tours they have experienced.
+Tour Discovery and Booking:
+Display a catalog of available tours with details such as destination, duration, price, and tour type.
+Implement a search feature, allowing users to find tours based on criteria like destination or tour type.
+Enable users to book tours securely with confirmation messages and email notifications.
+Review System:
+Implement a review system where users can leave feedback for tours they have participated in.
+Ensure reviews are open only after a certain duration when the tour is happening to avoid potential spoilers
+
+Admin Panel:
+Create an admin interface where administrators can manage tours, including adding, soft-deleting, and updating tour details.
+Allow admins to manage their profiles and user accounts for proper system administration.
+Backend - Node:
+Authentication and Authorization:
+Implement a secure authentication system using JWT (JSON Web Tokens) for both user and admin authentication.
+Set up proper authorization mechanisms to ensure that only authorized users (both regular users and admins) can access certain functionalities.
+User and Admin Management:
+Create endpoints for user registration, login, profile management, and password reset.
+Implement CRUD (Create, Read, Update, Delete) operations for admin profiles and user accounts.
+Tour Management:
+Develop endpoints to handle the creation, updating, and soft-deletion of tours.
+Implement search functionalities for tours based on different criteria.
+Booking System:
+Create endpoints for handling tour bookings, including checking availability and generating confirmation messages.
+Ensure proper handling of booking data and notifications.
+Review System Implementation:
+Develop a system to handle the review process, ensuring reviews are accessible only after a specific duration from the tour start date.
+Database Integration:
+
+Connect the backend to a database (e.g., MongoDB, MySQL) to store user information, tour details, bookings, and reviews.
+
+ENDPOINTS
+Endpoints:
+
+User Authentication:
+POST /api/auth/register: Register a new user.
+POST /api/auth/login: Authenticate and generate JWT for a user.
+POST /api/auth/reset-password: Initiate the password reset process.
+POST /api/auth/update-password: Update the user's password after reset.
+
+User Management:
+GET /api/users/:id: Retrieve user details.
+PUT /api/users/:id: Update user profile.
+DELETE /api/users/:id: Delete user account.
+
+Admin Management:
+GET /api/admins/:id: Retrieve admin details.
+PUT /api/admins/:id: Update admin profile.
+DELETE /api/admins/:id: Delete admin account.
+
+Tour Management:
+GET /api/tours: Get a list of all available tours.
+GET /api/tours/:id: Get details of a specific tour.
+POST /api/tours: Create a new tour.
+PUT /api/tours/:id: Update tour details.
+DELETE /api/tours/:id: Soft-delete a tour
+
+Booking Management:
+POST /api/bookings: Create a new booking.
+GET /api/bookings/user/:userId: Get all bookings for a specific user.
+GET /api/bookings/tour/:tourId: Get all bookings for a specific tour.
+
+Review Management:
+POST /api/reviews: Create a new review.
+GET /api/reviews/tour/:tourId: Get all reviews for a specific tour.
+
+Tables:
+
+Users Table:
+Primary Key: userId
+Fields: userId (Primary Key), username, password, email, firstName, lastName, createdAt, updatedAt.
+
+Tours Table:
+Primary Key: tourId
+Fields: tourId (Primary Key), destination, duration, price, tourType, isDeleted, createdAt, updatedAt.
+
+Bookings Table:
+Primary Key: bookingId
+Foreign Key: userId (References Users table)
+Foreign Key: tourId (References Tours table)
+Fields: bookingId (Primary Key), userId (Foreign Key), tourId (Foreign Key), bookingDate, status, createdAt, updatedAt.
+
+Reviews Table:
+Primary Key: reviewId
+Foreign Key: userId (References Users table)
+Foreign Key: tourId (References Tours table)
+Fields: reviewId (Primary Key), userId (Foreign Key), tourId (Foreign Key), rating, comment, createdAt, updatedAt.
+
+Relationships:
+
+User-Booking Relationship:
+One-to-Many relationship between Users and Bookings based on userId.
+
+Tour-Booking Relationship:
+One-to-Many relationship between Tours and Bookings based on tourId.
+
+User-Review Relationship:
+One-to-Many relationship between Users and Reviews based on userId.
+
+Tour-Review Relationship:
+One-to-Many relationship between Tours and Reviews based on tourId.
+In MSSQL, you can establish these relationships using foreign key constraints. For example, the Bookings table can have foreign keys referencing both Users and Tours. 
+Similarly, the Reviews table can have foreign keys referencing both Users and Tours. This ensures data integrity and consistency.
+
+Remember to handle soft-deletion by adding an isDeleted field to tables like Tours and update queries to set this field instead of permanently deleting records.
+
+
+Certainly! Here are the corresponding data types for each of the columns in the tables:
+
+Users Table:
+userId (Primary Key): INT
+username: VARCHAR(255)
+password: VARCHAR(MAX) (Assuming you are storing hashed passwords)
+email: VARCHAR(255)
+firstName: VARCHAR(255
+lastName: VARCHAR(255)
+isAdmin: BIT
+createdAt: DATETIME
+updatedAt: DATETIME
+
+Tours Table:
+tourId (Primary Key): INT
+destination: VARCHAR(255)
+duration: INT
+price: DECIMAL(10, 2) (Assuming a currency, adjust precision and scale accordingly)
+tourType: VARCHAR(255)
+isDeleted: BIT
+createdAt: DATETIME
+updatedAt: DATETIME
+
+Bookings Table:
+bookingId (Primary Key): INT
+userId (Foreign Key): INT
+tourId (Foreign Key): INT
+bookingDate: DATETIME
+status: VARCHAR(255)
+createdAt: DATETIME
+updatedAt: DATETIME
+
+Reviews Table:
+reviewId (Primary Key): INT
+userId (Foreign Key): INT
+tourId (Foreign Key): INT
+rating: INT
+comment: TEXT
+createdAt: DATETIME
+updatedAt: DATETIME

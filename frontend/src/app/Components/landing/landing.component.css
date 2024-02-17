@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+    background-image: url(../../../assets/pexels-donald-kamau-7467680.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    color: #fff;
+    padding: 2.5vw;
+  }
+  
+  .title {
+    font-size: 10rem;
+    color: red; 
+  }
+  
+  
+  .subtitle {
+    font-size: 4rem;
+    color: #fff; 
+    margin-top: 0.5rem; 
+  }
+  

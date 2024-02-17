@@ -1,0 +1,17 @@
+/* Add these styles to your global CSS or component-specific styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; 
+}
+
+img {
+    max-width: 100%; 
+    max-height: 100vh; 
+    width: auto;
+    height: auto;
+}

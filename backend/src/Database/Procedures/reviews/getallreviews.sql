@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getallreviews(@tourId VARCHAR)
+AS
+BEGIN
+SELECT * FROM review WHERE tourId =@tourId
+END

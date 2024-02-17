@@ -1,0 +1,71 @@
+
+div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #02173a;
+    color: #fff; 
+  }
+  
+
+  div > div:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+ 
+  li {
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  li:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  li a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Existing styles */
+
+.burger-button {
+  display: none; /* Hide the button by default on larger screens */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .burger-button {
+      display: block; /* Display the burger button on smaller screens */
+      cursor: pointer;
+  }
+
+  .responsive-menu {
+      display: flex;
+      flex-direction: column;
+      background-color: #02173a;
+      color: #fff;
+  }
+
+  .responsive-menu li {
+      margin: 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+  }
+
+  .responsive-menu li:hover {
+      text-decoration: underline;
+  }
+}
+
+  

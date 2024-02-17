@@ -1,0 +1,19 @@
+<div>
+    <div>
+        Quix Travels
+    </div>
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="burger-button">
+        <a>Menu</a>
+    </button> -->
+    <div>
+        <ul>
+            <li>Home</li>
+            <li>Who We Are</li>
+            <li>View Adventures</li>
+            <li>Find Us</li>
+            <li routerLink="/register" *ngIf="!isLoggedIn">Register</li>
+            <li routerLink="/login" *ngIf="!isLoggedIn">Login</li>
+            <li (click)="logout()" *ngIf="isLoggedIn">Logout</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="createTourForm">
+    <form [formGroup]="tourForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="destination">Destination</label><br>
+          <input type="text" id="destination" formControlName="destination"><br>
+          <div *ngIf="tourForm.get('destination')?.invalid && tourForm.get('destination')?.touched" class="">Required</div>
+        </div>
+
+        <div>
+          <label for="content">Feature Image (URL)</label><br>
+          <input type="text" id="content" formControlName="content"><br>
+          <div *ngIf="tourForm.get('content')?.invalid && tourForm.get('content')?.touched" class="">Required</div>
+        </div>
+      
+        <div>
+          <label for="price">Price (USD)</label>
+          <input type="text" id="price" formControlName="price">
+          <div *ngIf="tourForm.get('price')?.invalid && tourForm.get('price')?.touched" class="">Required</div>
+        </div>
+      
+        <div>
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" formControlName="startDate">
+          <div *ngIf="tourForm.get('startDate')?.invalid && tourForm.get('startDate')?.touched" class="">Required</div>
+        </div>
+      
+        <div>
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" formControlName="endDate">
+          <div *ngIf="tourForm.get('endDate')?.invalid && tourForm.get('endDate')?.touched" class="">Required</div>
+        </div>
+      
+        <button type="submit" [disabled]="travelForm.invalid">Submit</button>
+      </form>   
+</div>
