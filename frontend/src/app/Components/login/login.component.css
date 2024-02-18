@@ -6,7 +6,7 @@
 }
 
 .background-image {
-    background-image: url('https://cdn.pixabay.com/photo/2019/12/09/11/43/animal-4683342_1280.jpg');
+    background-image: url(../../../assets/pexels-donald-kamau-7467680.jpg);
     background-size: cover;
 }
 
@@ -38,7 +38,6 @@
     z-index: -1;
 }
 
-/* Responsive styles for the login form */
 
 .login {
     background: rgba(255, 255, 255, 0.8); 
@@ -78,10 +77,9 @@ input:focus {
     margin-top: 5px;
 }
 
-/* Media Query for responsiveness */
 @media screen and (max-width: 600px) {
     .login-page {
-        flex-direction: column; /* Change to column layout on smaller screens */
+        flex-direction: column; 
     }
 
     .login {

@@ -3,9 +3,14 @@
     <form [formGroup]="registerForm" (ngSubmit)="registerUser" class="">
         <div><h2 class="font-bold text-center">{{title}}</h2></div>
         <div class="mb-4 flex flex-column">
-            <label class="mb-2">Name</label><br>
-            <input type="text " formControlName="name" class="" id="">
-            <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+            <label class="mb-2">First Name:</label><br>
+            <input type="text " formControlName="firstname" class="" id="">
+            <div *ngIf="registerForm.get('firstname')?.invalid && registerForm.get('firstname')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+        </div>
+        <div class="mb-4 flex flex-column">
+            <label class="mb-2">Last Name:</label><br>
+            <input type="text " formControlName="lastname" class="" id="">
+            <div *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
         </div>
         <div class="mb-4 flex flex-column">
             <label class="mb-2">Email</label><br>
