@@ -1,7 +1,8 @@
-/* Add these styles to your global CSS or component-specific styles */
+
 .register {
     display: flex;
     justify-content: center;
+    margin: 20px auto;
 }
 
 form {

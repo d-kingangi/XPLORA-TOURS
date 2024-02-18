@@ -6,7 +6,6 @@ import {user} from "../Interfaces/users";
 import { sqlConfig } from "../Config/sql.config";
 import { registerUserSchema } from '../Validators/user.validator';
 
-// const users: User[] = []
 
 export const createUser = async(req: Request, res: Response)=>{
     try{
@@ -46,9 +45,7 @@ export const createUser = async(req: Request, res: Response)=>{
 
 export const getUsers =  async(req: Request, res:Response)=>{
     try {
-        // return res.json({
-        //     users: users
-        // })
+        
         const pool = await mssql.connect(sqlConfig);
         let allusers = (await pool.request().execute('getallusers')).recordset
 
@@ -63,8 +60,6 @@ export const getUsers =  async(req: Request, res:Response)=>{
 export const getOneUser = async(req: Request, res:Response)=>{
     try {
         const id = req.params.id
-
-        // const singleUser = users.filter(user=> user.user_id == id)
 
         const pool = await mssql.connect(sqlConfig)
 

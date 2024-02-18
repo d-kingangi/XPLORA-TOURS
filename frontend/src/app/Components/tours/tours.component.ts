@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tours',
   standalone: true,
-  imports: [FormBuilder, ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './tours.component.html',
   styleUrl: './tours.component.css'
 })
@@ -24,5 +23,9 @@ export class ToursComponent {
       startDate: ['', Validators.required],
       endDate: ['', Validators.required]
     });
-  }  
+  } 
+  
+  onSubmit() {
+    console.log('Form submitted:', this.tourForm.value);
+  }
 }

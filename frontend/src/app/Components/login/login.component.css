@@ -2,7 +2,8 @@
 
 .login-page {
     display: flex;
-    flex-direction: row; /* Default: Side by side on larger screens */
+    flex-direction: row; 
+    margin: 20px auto;
 }
 
 .background-image {

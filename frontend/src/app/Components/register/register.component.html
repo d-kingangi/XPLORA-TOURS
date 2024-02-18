@@ -15,28 +15,28 @@
         <div class="mb-4 flex flex-column">
             <label class="mb-2">Email</label><br>
             <input type="email " formControlName="email" class="" id="">
-            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]"></div>
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">Invalid Format</div>
         </div>
         <div class="mb-4 flex flex-column">
-            <label class="mb-2">phone</label><br>
+            <label class="mb-2">Phone:</label><br>
             <input type="text " formControlName="phone" class="" id="">
             <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
         </div>
         <div class="mb-4 flex flex-column">
-            <label class="mb-2">Profile Image</label><br>
+            <label class="mb-2">Profile Image:</label><br>
             <input type="text " formControlName="profileImage" class="" id="">
         </div>
         <div class="mb-4 flex flex-column">
-            <label class="">password</label><br>
+            <label class="">Password:</label><br>
             <input type="text " formControlName="password" class="" id="">
-            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="tex-sm text-red-500 mt-[3px]">Password must contain at least one number, one letter, and one special character.</div>
         </div>
         <div class="">
             <input type="submit" [disabled]="registerForm.invalid" class="" value="Create Account">
-            <a class="text-blue-500 hover:text-blue-600 cursor-pointer">Proceed to login</a>
+        </div>
+        <div>
+            <a routerLink='/login' class="text-blue-500 hover:text-blue-600 cursor-pointer">Proceed to login</a>
         </div>
     </form>
 </div>
-
-<!-- Design the month one project (PMS) landing page, login(Reactive form) and registration(Template drivent approach) pages using Angular, add routing for easy navigation between pages. Reuse the navbar in all pages -->

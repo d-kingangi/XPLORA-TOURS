@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { tour } from '../../Interfaces/tours.interface';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
+import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 
 
 @Component({
   selector: 'app-available-tours',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [AdminDashboardComponent],
   templateUrl: './available-tours.component.html',
   styleUrl: './available-tours.component.css'
 })

@@ -3,33 +3,33 @@
         <div>
           <label for="destination">Destination</label><br>
           <input type="text" id="destination" formControlName="destination"><br>
-          <div *ngIf="tourForm.get('destination')?.invalid && tourForm.get('destination')?.touched" class="">This is Required</div>
+          <div *ngIf="tourForm.get('destination')?.invalid && tourForm.get('destination')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
         </div>
 
         <div>
           <label for="content">Feature Image (URL)</label><br>
           <input type="text" id="content" formControlName="content"><br>
-          <div *ngIf="tourForm.get('content')?.invalid && tourForm.get('content')?.touched" class="">This is Required</div>
+          <div *ngIf="tourForm.get('content')?.invalid && tourForm.get('content')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
         </div>
       
         <div>
-          <label for="price">Price (USD)</label>
-          <input type="text" id="price" formControlName="price">
-          <div *ngIf="tourForm.get('price')?.invalid && tourForm.get('price')?.touched" class="">This is Required</div>
+          <label for="price">Price (USD)</label><br>
+          <input type="text" id="price" formControlName="price"><br>
+          <div *ngIf="tourForm.get('price')?.invalid && tourForm.get('price')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
         </div>
       
         <div>
-          <label for="startDate">Start Date</label>
-          <input type="date" id="startDate" formControlName="startDate">
-          <div *ngIf="tourForm.get('startDate')?.invalid && tourForm.get('startDate')?.touched" class="">This is Required</div>
+          <label for="startDate">Start Date</label><br>
+          <input type="date" id="startDate" formControlName="startDate"><br>
+          <div *ngIf="tourForm.get('startDate')?.invalid && tourForm.get('startDate')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
         </div>
       
         <div>
-          <label for="endDate">End Date</label>
-          <input type="date" id="endDate" formControlName="endDate">
-          <div *ngIf="tourForm.get('endDate')?.invalid && tourForm.get('endDate')?.touched" class="">This is Required</div>
+          <label for="endDate">End Date</label><br>
+          <input type="date" id="endDate" formControlName="endDate"><br>
+          <div *ngIf="tourForm.get('endDate')?.invalid && tourForm.get('endDate')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
         </div>
       
-        <button type="submit" [disabled]="travelForm.invalid">Submit</button>
+        <button type="submit" [disabled]="tourForm.invalid">Submit</button>
       </form>   
 </div>

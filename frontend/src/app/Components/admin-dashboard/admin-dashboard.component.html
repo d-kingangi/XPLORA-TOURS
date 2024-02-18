@@ -1,25 +1,36 @@
 <div class="sidebar">
-    <div class="accordion">
-      <button class="accordion-btn" (click)="toggleAccordion('tours')">Tours</button>
+  <div class="accordion">
+      <button class="accordion-btn" (click)="toggleAccordion('tours')">
+          Tours
+          <span class="rotate">▲</span> 
+      </button>
       <div class="accordion-content" id="tours">
-        <a routerLink="/view-tours" > View Tours</a>
-        <a routerLink="/create-tour">Add Tour</a>
+          <a routerLink="/view-tours">View Tours</a><br>
+          <a routerLink="/create-tour">Add Tour</a>
       </div>
-  
-      <button class="accordion-btn" (click)="toggleAccordion('users')">Users</button>
+
+      <button class="accordion-btn" (click)="toggleAccordion('users')">
+          Users
+          <span class="rotate">▲</span>
+      </button>
       <div class="accordion-content" id="users">
-        <a >View Users</a>
+          <a routerLink="">View Users</a>
       </div>
-  
-      <button class="accordion-btn" (click)="toggleAccordion('bookings')">Bookings</button>
+
+      <button class="accordion-btn" (click)="toggleAccordion('bookings')">
+          Bookings
+          <span class="rotate">▲</span>
+      </button>
       <div class="accordion-content" id="bookings">
-        <a>View Bookings</a>
+          <a routerLink="">View Bookings</a>
       </div>
-  
-      <button class="accordion-btn" (click)="toggleAccordion('reviews')">Reviews</button>
+
+      <button class="accordion-btn" (click)="toggleAccordion('reviews')">
+          Reviews
+          <span class="rotate">▲</span>
+      </button>
       <div class="accordion-content" id="reviews">
-        <a >View Reviews</a>
+          <a routerLink="">View Reviews</a>
       </div>
-    </div>
+  </div>
 </div>
-  
