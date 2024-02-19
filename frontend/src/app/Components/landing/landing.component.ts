@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 export class LandingComponent {
   title:string = 'View'
-  subtitle:string = 'Kenya'
+  subtitle:string = 'Kenya(Maasai Mara, Samburu, Mt Elgon, Ol Pegeta)'
 
 
   //who are section

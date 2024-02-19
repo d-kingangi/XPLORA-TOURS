@@ -1,6 +1,7 @@
 export interface users{
     user_id: string,
-    name: string,
+    firstname: string,
+    lastname: string,
     email: string,
     phone: string,
     profile_image: string,
@@ -9,7 +10,8 @@ export interface users{
 
 export interface updatedUser{
     user_id: string,
-    name: string,
+    firstname: string,
+    lastname: string,
     email: string,
     phone: string,
     profile_image: string,

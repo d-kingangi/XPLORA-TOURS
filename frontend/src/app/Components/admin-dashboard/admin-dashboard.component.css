@@ -25,7 +25,15 @@
   display: none;
   padding: 10px;
   background-color: #85abca; 
+  border-radius: 5px;
+  margin: 10px;
+  gap: 10px;
 }
+
+.accordion-content a {
+  margin-bottom: 20px;
+}
+
 
 .active {
   background-color: #777;

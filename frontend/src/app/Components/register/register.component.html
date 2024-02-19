@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 
 <div class="register flex justify-center">
     <form [formGroup]="registerForm" (ngSubmit)="registerUser" class="">
@@ -13,7 +14,7 @@
             <div *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
         </div>
         <div class="mb-4 flex flex-column">
-            <label class="mb-2">Email</label><br>
+            <label class="mb-2">Email:</label><br>
             <input type="email " formControlName="email" class="" id="">
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]"></div>
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">Invalid Format</div>

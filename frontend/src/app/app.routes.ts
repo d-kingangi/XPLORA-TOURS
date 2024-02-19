@@ -11,8 +11,6 @@ export const routes: Routes = [
     {path:'', component: LandingComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'create-tour', component: ToursComponent},
-    {path: 'view-tours', component: ViewToursComponent},
     {path:'**', component: NotfoundComponent},
     {path: 'admin', component: AdminDashboardComponent, children:[
         {path: 'view-tours', component: ViewToursComponent},
