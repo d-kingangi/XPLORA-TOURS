@@ -8,7 +8,7 @@ CREATE OR ALTER PROCEDURE updatetour(
 AS 
 BEGIN 
     UPDATE tours SET
-        tourId = @tour,
+        tourId = @tourId,
         destination = @destination,
         price = @price,
         startDate = @startDate,

@@ -72,6 +72,19 @@ input:focus {
     transition: border-bottom-color 0.3s ease;
 }
 
+.button-orange {
+    background-color: orange;
+    border-radius: 5px;
+    color: #fff; 
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-orange:hover {
+    background-color: darkorange;
+}
+
 .error-message {
     color: red;
     font-size: 0.8em;

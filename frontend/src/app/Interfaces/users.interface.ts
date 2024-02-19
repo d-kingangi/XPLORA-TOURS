@@ -1,5 +1,5 @@
 export interface users{
-    user_id: string,
+    userid: string,
     firstname: string,
     lastname: string,
     email: string,
@@ -9,7 +9,7 @@ export interface users{
 }
 
 export interface updatedUser{
-    user_id: string,
+    userId: string,
     firstname: string,
     lastname: string,
     email: string,

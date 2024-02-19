@@ -5,10 +5,10 @@ dotenv.config();
 
 export const sqlConfig = {
     //enter custom server credentials
-    user: 'sa' || process.env.DB_USER,
-    password: 'password123' || process.env.DB_PWD,
-    database: 'ProjectManagement' || process.env.DB_NAME,
-    server: "CALIGULA\\MSSQLSERVER1" ||process.env.SERVER,
+    user: '' || process.env.DB_USER,
+    password: '' || process.env.DB_PWD,
+    database: '' || process.env.DB_NAME,
+    server: "" ||process.env.SERVER,
     port: 1433,
 
     pool:{

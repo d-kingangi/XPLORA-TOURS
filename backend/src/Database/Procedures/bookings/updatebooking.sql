@@ -2,7 +2,7 @@ CREATE OR ALTER PROCEDURE updatebooking(
     @bookingId VARCHAR,
     @userId VARCHAR,
     @tourId VARCHAR,
-    @bookingId VARCHAR
+    @bookingDate VARCHAR
 )
 AS 
 BEGIN
@@ -10,6 +10,6 @@ BEGIN
         bookingId = @bookingId,
         userId = @userId,
         tourId =@tourId,
-        bookingDate = @bookingId
+        bookingDate = @bookingDate
     WHERE bookingId = @bookingId
 END

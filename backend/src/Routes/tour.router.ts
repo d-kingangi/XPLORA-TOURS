@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createtour, deletetour, getonetour, getalltours, updatetour } from tours.controller;
+import { createtour, deletetour, getonetour, getalltours, updatetour } from "../Controllers/tours.controller";
 import { verifyToken } from "../Middlewares/verifyTokens";
 
 const tourRouter = Router()

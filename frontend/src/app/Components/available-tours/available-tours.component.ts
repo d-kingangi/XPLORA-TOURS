@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { tour } from '../../Interfaces/tours.interface';
-import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 @Component({
   selector: 'app-available-tours',
   standalone: true,
-  imports: [AdminDashboardComponent],
+  imports: [CommonModule, NavbarComponent],
   templateUrl: './available-tours.component.html',
   styleUrl: './available-tours.component.css'
 })
@@ -59,4 +59,9 @@ export class AvailableToursComponent {
       image:"../../../assets/pexels-donald-kamau-7467680.jpg"
     }
   ]
+
+  bookNow(tour: any) {
+    console.log('Booking now:', tour);
+}
+
 }

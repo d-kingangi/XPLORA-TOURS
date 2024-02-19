@@ -10,6 +10,7 @@
 .quick-links,
 .newsletter {
     max-width: 300px;
+    margin-bottom: 20px; 
 }
 
 .contact-details p,
@@ -44,11 +45,12 @@
 }
 
 .newsletter input:focus {
-    border-bottom-color: #fff; /* Change the color on focus */
+    border-bottom-color: #fff; 
 }
 
 .newsletter button {
-    background-color: #fff;
+    background-color: orange;
+    border-radius: 5px;
     color: #333;
     border: none;
     padding: 8px 12px;

@@ -8,4 +8,10 @@ CREATE TABLE users(
     isDeleted BIT DEFAULT 0,
     )
 
+    -- Select * FROM users;
+
+--     ALTER TABLE users
+-- RENAME COLUMN passsword TO password;
+
+
     -- ALTER TABLE users SET (email VARCHAR) CONSTRAINT UNIQUE

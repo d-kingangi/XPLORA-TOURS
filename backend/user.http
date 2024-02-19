@@ -1,0 +1,34 @@
+###Create User
+POST http://localhost:4100/users
+Content-Type: application/json
+
+{
+  "firstname": "Duncan",
+  "lastname": "King'ang'i",
+  "email": "kingangiduncan47@gmail.com@",
+  "passsword": "12345678"
+}
+
+### Get Users
+GET http://localhost:4100/users
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+### Update User
+PUT http://localhost:4100/users/update/uniqueUserId
+Content-Type: application/json
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+{
+  "firstname": "UpdatedFirstName",
+  "lastname": "UpdatedLastName",
+  "email": "updated.email@example.com",
+  "isAdmin": true
+}
+
+### Get One User
+GET http://localhost:4100/users/uniqueUserId
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+### Delete User
+DELETE http://localhost:4100/users/delete/uniqueUserId
+Authorization: Bearer YOUR_ACCESS_TOKEN

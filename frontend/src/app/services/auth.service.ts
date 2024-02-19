@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   readToken(token:string){
-    return this.http.get<{info:{user_id:string, name:string, email: string, role:string}}>('http://localhost:4100/auth/checkdetails', {
+    return this.http.get<{info:{userId:string, firstname:string, lastname:string, email: string}}>('http://localhost:4100/auth/checkdetails', {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': token

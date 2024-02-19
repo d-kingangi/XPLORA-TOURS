@@ -7,6 +7,6 @@ CREATE OR ALTER PROCEDURE createuser(
 )
 AS
 BEGIN
-    INSERT INTO users(userId, firstname, lastname, email,passsword)
-    VALUES(@userId, @firstname, @lastname, @email, @passsword)
+    INSERT INTO users(userId, firstname, lastname, email, passsword)
+    VALUES(@userId, @firstname, @lastname, @email, @password)
 END

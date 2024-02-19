@@ -4,7 +4,7 @@ import {v4} from 'uuid'
 import {tour} from "../Interfaces/tours";
 import { sqlConfig } from "../Config/sql.config";
 
-export const createProject = async(req: Request, res: Response)=>{
+export const createtour = async(req: Request, res: Response)=>{
     try{
         const id = v4()
 
