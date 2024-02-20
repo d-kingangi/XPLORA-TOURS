@@ -14,7 +14,7 @@
         <div class="blurry-background"></div>
 
         <div class="login">
-            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
                 <div><h3>{{ title }}</h3></div>
                 
                 <div class="form-input">

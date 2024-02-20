@@ -1,7 +1,8 @@
-import mssql from 'mssql';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config()
+
+// console.log(process.env.DB_USER);
 
 export const sqlConfig = {
     //enter custom server credentials
@@ -22,4 +23,3 @@ export const sqlConfig = {
         trustServerCertificate: true
     }
 }
-
