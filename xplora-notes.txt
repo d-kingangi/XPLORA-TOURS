@@ -25,10 +25,6 @@ Stacks
 Frontend – Angular
 Backend – Node
 
-uizard 
-duncanking'ang'i@teach2give.com
-enj##344re4#""34645tw@!#!oyin
-
 Frontend - Angular:
 
 User Authentication:
