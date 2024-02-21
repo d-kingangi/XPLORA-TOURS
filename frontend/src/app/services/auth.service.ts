@@ -1,20 +1,21 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { loginDetails } from '../interfaces/login.interface';
+import { loginDetails } from '../Interfaces/login.interface';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  loginUser(user_details:loginDetails ){
-    return this.http.post<{message:string, token:string, error:string}>('http://localhost:4100/auth/login', user_details)
+  loginUser(details:loginDetails ){
+    return this.http.post<{message:string, token:string, error:string}>('http://localhost:4100/auth/login', details)
   }
 
   readToken(token:string){
-    return this.http.get<{info:{userId:string, firstname:string, lastname:string, email: string}}>('http://localhost:4100/auth/checkdetails', {
+    return this.http.get<{info:{userId:string, firstname:string, lastname:string, email: string, isAdmin: any,}}>('http://localhost:4100/auth/checkdetails', {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': token

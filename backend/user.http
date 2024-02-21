@@ -5,8 +5,9 @@ Content-Type: application/json
 {
   "firstname": "Duncan",
   "lastname": "King'ang'i",
-  "email": "kingangiduncan47@gmail.com@",
-  "passsword": "12345678"
+  "email": "duncan47@gmail.com",
+  "content": "image.com",
+  "password": "duncan"
 }
 
 ### Get Users

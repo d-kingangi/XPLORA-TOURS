@@ -1,8 +1,8 @@
 CREATE OR ALTER PROCEDURE updatebooking(
-    @bookingId VARCHAR,
-    @userId VARCHAR,
-    @tourId VARCHAR,
-    @bookingDate VARCHAR
+    @bookingId VARCHAR(255),
+    @userId VARCHAR(255),
+    @tourId VARCHAR(255),
+    @bookingDate DATETIME
 )
 AS 
 BEGIN

@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class NavbarComponent {
   currentroute = (this.route.snapshot.routeConfig?.path)
   token = localStorage.getItem('token') as string
-  constructor(private router:Router, private route:ActivatedRoute){
+  constructor(private router:Router, private route:ActivatedRoute, private authService: AuthService){
 
     if(this.currentroute == 'login'){
       if(this.token){
@@ -22,7 +22,8 @@ export class NavbarComponent {
       }
     }
   }
-
+  
+  // token = localStorage.getItem('token')
   isLoggedIn = localStorage.getItem('token')
 
   today = new Date()
@@ -36,7 +37,7 @@ export class NavbarComponent {
   }
 
   logout(){
+    this.authService.logout
     localStorage.clear()
-    this.router.navigate([''])
   }
 }

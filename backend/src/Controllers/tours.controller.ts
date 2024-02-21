@@ -20,6 +20,7 @@ export const createtour = async(req: Request, res: Response)=>{
         .input("price", mssql.VarChar, price)
         .input("startDate", mssql.VarChar, startDate)
         .input("endDate", mssql.VarChar, endDate)
+        .input("content", mssql.VarChar, content)
         .execute('createtour')).rowsAffected
 
         console.log(result);
@@ -35,10 +36,10 @@ export const createtour = async(req: Request, res: Response)=>{
 export const getalltours =async (req:Request, res:Response) => {
     try {
         const pool = await mssql.connect(sqlConfig);
-        let allprojects = (await pool.request().execute('getalltours')).recordset
+        let alltours = (await pool.request().execute('getalltours')).recordset
 
         return res.status(200).json({
-            projects: allprojects
+            tours: alltours
         })
     } catch (error) {
         return res.json({error})
@@ -51,10 +52,10 @@ export const getonetour = async (req:Request, res:Response) => {
 
         const pool = await mssql.connect(sqlConfig)
 
-        let project = (await pool.request().input("tourId", id).execute('getonetour')).recordset
+        let tours = (await pool.request().input("tourId", id).execute('getonetour')).recordset
 
         return res.json({
-            project
+            tours
         })
     } catch (error) {
         return res.json({error})

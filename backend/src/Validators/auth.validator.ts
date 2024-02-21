@@ -1,4 +1,3 @@
-
 import joi from 'joi'
 
 export const loginUserSchema = joi.object({

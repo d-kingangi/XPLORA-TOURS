@@ -3,8 +3,7 @@ export interface users{
     firstname: string,
     lastname: string,
     email: string,
-    phone: string,
-    profile_image: string,
+    content: string,
     password: string 
 }
 
@@ -13,7 +12,6 @@ export interface updatedUser{
     firstname: string,
     lastname: string,
     email: string,
-    phone: string,
-    profile_image: string,
+    content: string,
     password: string 
 }

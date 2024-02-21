@@ -3,7 +3,7 @@ div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: #02173a;
     color: #fff; 
   }

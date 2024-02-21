@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE getoneuser (@userId VARCHAR)
+CREATE OR ALTER PROCEDURE getoneuser (@userId VARCHAR(255))
 AS
 BEGIN
     SELECT * FROM users WHERE userId = @userId

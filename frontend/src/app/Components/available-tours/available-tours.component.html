@@ -4,13 +4,15 @@
     <div class="cards">
         <div class="card" *ngFor="let tour of tours; let i = index">
             <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
-                <h2>{{tour.description}}</h2>
+                <h2>{{tour.destination}}</h2>
                 <p><b>$</b> {{tour.price}} </p>
                 <p><b>Start Date: </b>{{tour.startDate}} </p>
                 <p><b>End Date: </b>{{tour.endDate}} </p>
                 <button class="book-now-button" (click)="bookNow(tour)">Book Now</button>
+                <!-- <button class="delete-now-button" (click)="deletetour()" value="delete"></button> -->
+                <!-- <button class="update-now-button" (click="updatetour()" value="update")></button> -->
             </div>
-            <img src="{{tour.image}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
+            <img src="{{tour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
         </div>
     </div>
 </div>

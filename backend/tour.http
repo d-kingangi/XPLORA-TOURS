@@ -1,0 +1,15 @@
+###create tour
+POST  http://localhost:4100/tour
+Content-Type: application/json
+{
+    "destination": "Mt Elgon",
+    "content": "image.com",
+    "price": "450.00",
+    "startDate": "04-20-2024",
+    "endDate": "04-30-2024"
+}
+
+###
+
+GET http://localhost:4100/tour
+Content-Type: application/json

@@ -1,8 +1,9 @@
 export interface user{
-    firstname: string;
-    lastname: string;
-    email: string;
-    password: string;
+    firstname: string,
+    lastname: string,
+    email: string,
+    content: string,
+    password: string,
 }
 
 export interface loginUserDetails{
@@ -10,5 +11,6 @@ export interface loginUserDetails{
     firstname: string,
     lastname: string,
     email: string,
-    isWelcomed: boolean,
+    password: string,
+    isAdmin: boolean
 }

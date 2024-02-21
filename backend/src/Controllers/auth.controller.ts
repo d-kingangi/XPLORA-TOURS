@@ -18,18 +18,21 @@ export const loginUser = async(req: Request, res: Response)=>{
             })
         }
 
+        
+        
         const pool = await mssql.connect(sqlConfig)
-
+        
         let user = (await pool.request()
         .input("email", email)
         .input("password", password)
         .execute("loginUser")).recordset
-
+        
         console.log(user);
-
+        
         if(user[0]?.email == email){
             const correct_pwd = await bcrypt.compare(password, user[0].password)
-
+            
+            console.log(correct_pwd);
             if(!correct_pwd){
                  return res.status(401).json({
                     error: "Incorrect password"
@@ -41,6 +44,9 @@ export const loginUser = async(req: Request, res: Response)=>{
 
                 return rest
             })
+
+            console.log(process.env.SECRET);
+            
 
             const token = jwt.sign(loginCredentials[0], process.env.SECRET as string, {
                 expiresIn: '3600s'

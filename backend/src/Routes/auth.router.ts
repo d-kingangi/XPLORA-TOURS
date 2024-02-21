@@ -5,8 +5,8 @@ import { verifyToken } from "../Middlewares/verifyTokens";
 const auth_router = Router()
 
 auth_router.post('/login', loginUser)
-auth_router.post('/checkdetails', verifyToken, checkUserDetails)
+auth_router.get('/checkdetails', verifyToken, checkUserDetails)
 auth_router.put('/reset_pwd', resetPassword)
 
 
-export default auth_router
+export default auth_router 

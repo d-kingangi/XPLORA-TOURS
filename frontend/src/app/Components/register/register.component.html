@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="register flex justify-center">
-    <form [formGroup]="registerForm" (ngSubmit)="registerUser" class="">
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="">
         <div><h2 class="font-bold text-center">{{title}}</h2></div>
         <div class="mb-4 flex flex-column">
             <label class="mb-2">First Name:</label><br>
@@ -20,13 +20,8 @@
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">Invalid Format</div>
         </div>
         <div class="mb-4 flex flex-column">
-            <label class="mb-2">Phone:</label><br>
-            <input type="text " formControlName="phone" class="" id="">
-            <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
-        </div>
-        <div class="mb-4 flex flex-column">
             <label class="mb-2">Profile Image:</label><br>
-            <input type="text " formControlName="profileImage" class="" id="">
+            <input type="text " formControlName="content" class="" id="">
         </div>
         <div class="mb-4 flex flex-column">
             <label class="">Password:</label><br>

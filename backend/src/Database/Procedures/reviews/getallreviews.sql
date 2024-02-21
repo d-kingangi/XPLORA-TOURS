@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE getallreviews(@tourId VARCHAR)
+CREATE OR ALTER PROCEDURE getallreviews(@tourId VARCHAR(255))
 AS
 BEGIN
 SELECT * FROM review WHERE tourId =@tourId

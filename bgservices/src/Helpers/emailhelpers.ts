@@ -16,7 +16,7 @@ let configuration: mail_configs = ({
     requireTLS: true,
     auth:{
         user: "itsronduncan@gmail.com",
-        pass: ""
+        pass: "zlmcygmuislzustk"
     }
 })
 

@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthService } from '../../services/auth.service';
-import { loginDetails } from '../../interfaces/login.interface';
-import { HttpClientModule } from '@angular/common/http';
+import { loginDetails } from '../../Interfaces/login.interface';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterLink, NavbarComponent, HttpClient],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink, NavbarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -28,9 +28,14 @@ export class LoginComponent {
 
     loginForm!: FormGroup
 
-    constructor(private fb:FormBuilder, private router: Router, private authservice:AuthService){}
+    constructor(private fb:FormBuilder, private router: Router, private authservice:AuthService){
+      this.loginForm = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required]],
+     });
+    }
 
-    login(details:loginDetails){
+    loginUser(details:loginDetails){
       console.log(details)
     }
 
@@ -58,15 +63,21 @@ export class LoginComponent {
 
             setTimeout(() => {
               this.visible2 = false
+
+              //   if (userDetails.isAdmin) {
+          //     // Navigate to admin component
+          //     this.router.navigate(['admin']);
+          //  } else {
+          //     // Navigate to user component
+          //     this.router.navigate(['user']);
+          //  }
+          
             }, 2000);
           })
 
           
         }
       })
-
-
-
       // localStorage.setItem('loggedIn', 'true')
       
       // this.router.navigate(['admin'])

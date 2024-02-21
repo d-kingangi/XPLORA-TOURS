@@ -11,35 +11,34 @@ export const createUser = async(req: Request, res: Response)=>{
     try{
         const id = v4()
 
-        const {firstname, lastname, email, password}:user = req.body
+        const {firstname, lastname, email, content, password}:user = req.body
 
         const hashed_pwd = await bcrypt.hash(password, 3)
 
         let {error} = registerUserSchema.validate(req.body)
 
         if(error){
-            return res.status(404).json({
+            return res.status(400).json({
                 error: error
             })
         }
-
+        console.log(req.body);
         const pool = await mssql.connect(sqlConfig)
 
-        let result = (await pool.request()
+        let result = await(await pool.request()
         .input("userId", mssql.VarChar, id)
-        .input("fistname", mssql.VarChar, firstname)
+        .input("firstname", mssql.VarChar, firstname)
         .input("lastname", mssql.VarChar, lastname)
         .input("email", mssql.VarChar, email)
+        .input("content", mssql.VarChar, content)
         .input("password", mssql.VarChar, hashed_pwd)
         .execute('createuser')).rowsAffected
-
-        console.log(result)
 
         return res.json({
             message:"Account created successfully",
         })
     } catch(error) {
-        return res.json({error: error})
+        return res.status(500).json({error: error})
     }
 }
 

@@ -5,11 +5,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent,  RouterModule],
   templateUrl: './admin-dashboard.component.html',
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent {
+  title:string = 'Users'
+
   constructor(private renderer: Renderer2) {}
 
   toggleAccordion(sectionId: string) {

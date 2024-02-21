@@ -1,7 +1,7 @@
 CREATE TABLE reviews (
-    reviewId VARCHAR PRIMARY KEY NOT NULL,
-    userID VARCHAR NOT NULL,
-    tourId VARCHAR NOT NULL,
+    reviewId VARCHAR(255) PRIMARY KEY NOT NULL,
+    userID VARCHAR(255) NOT NULL,
+    tourId VARCHAR(255) NOT NULL,
     rating INT NOT NULL,
     comment TEXT,
     CONSTRAINT fk_reviews_users FOREIGN KEY (userID)

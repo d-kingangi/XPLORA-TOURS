@@ -1,7 +1,7 @@
 CREATE OR ALTER PROCEDURE updatetour(
-    @tourId VARCHAR,
-    @destination VARCHAR,
-    @price VARCHAR,
+    @tourId VARCHAR(255),
+    @destination VARCHAR(255),
+    @price VARCHAR(255),
     @startDate DATETIME,
     @endDate DATETIME
 )

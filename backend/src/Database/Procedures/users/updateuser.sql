@@ -1,9 +1,9 @@
-CREATE PROCEDURE updateuser(
-    @userId VARCHAR,
-    @firstname VARCHAR, 
-    @lastname VARCHAR,
-    @email VARCHAR,
-    @password VARCHAR)
+CREATE  or ALTER PROCEDURE updateuser(
+    @userId VARCHAR(255),
+    @firstname VARCHAR(255), 
+    @lastname VARCHAR(255),
+    @email VARCHAR(255),
+    @password VARCHAR(255))
 AS
 BEGIN
     UPDATE users SET 

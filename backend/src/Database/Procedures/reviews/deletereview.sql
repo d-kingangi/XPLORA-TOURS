@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE deletereview (@reviewId VARCHAR)
+CREATE OR ALTER PROCEDURE deletereview (@reviewId VARCHAR(255))
 AS
 BEGIN
     DELETE FROM reviews

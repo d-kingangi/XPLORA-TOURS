@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE createtour(
-    @tourId VARCHAR,
-    @destination VARCHAR,
+    @tourId VARCHAR (255),
+    @destination VARCHAR(255),
     @price DECIMAL,
     @startDate DATETIME,
     @endDate DATETIME

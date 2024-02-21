@@ -1,7 +1,7 @@
 CREATE TABLE bookings(
-    bookingId VARCHAR PRIMARY KEY,
-    userId VARCHAR NOT NULL,
-    tourId VARCHAR NOT NULL,
+    bookingId VARCHAR(255) PRIMARY KEY,
+    userId VARCHAR(255) NOT NULL,
+    tourId VARCHAR(255) NOT NULL,
     bookingDate DATETIME NOT NULL,
     CONSTRAINT FK_booking_users FOREIGN KEY (userId)
     REFERENCES users(userID),
@@ -9,4 +9,7 @@ CREATE TABLE bookings(
     REFERENCES tours(tourId)
 ) 
 
+ALTER TABLE bookings ADD isConfimed BIT DEFAULT 0
+
+SELECT * FROM bookings
 

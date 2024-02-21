@@ -5,7 +5,7 @@ import { verifyToken } from "../Middlewares/verifyTokens";
 const tourRouter = Router()
 
 tourRouter.post('/', createtour)
-tourRouter.get('/', verifyToken, getalltours)
+tourRouter.get('/', getalltours)
 tourRouter.put('/update/:id', verifyToken, updatetour)
 tourRouter.get('/:id', verifyToken, getonetour)
 tourRouter.delete('/delete/:id', verifyToken, deletetour)

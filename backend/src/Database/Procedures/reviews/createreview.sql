@@ -1,7 +1,7 @@
 CREATE OR ALTER PROCEDURE createreview (
-    @reviewId VARCHAR,
-    @userId VARCHAR,
-    @tourId VARCHAR,
+    @reviewId VARCHAR(255),
+    @userId VARCHAR(255),
+    @tourId VARCHAR(255),
     @rating INT,
     @comment TEXT
 )

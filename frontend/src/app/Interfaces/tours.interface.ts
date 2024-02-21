@@ -1,7 +1,15 @@
-export interface tour{
-    description: string,
+export interface tours{
+    destination: string,
     price: number,
     startDate: string,
     endDate: string,
-    image: string,
+    content: string,
+}
+
+export interface updatedtour{
+    destination: string,
+    price: number,
+    startDate: string,
+    endDate: string,
+    content: string,
 }

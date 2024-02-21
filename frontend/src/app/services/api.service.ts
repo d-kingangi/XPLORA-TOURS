@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { updatedUser, users } from '../Interfaces/users.interface';
+import { bookings, updatedbooking } from '../Interfaces/bookings.interface';
+import { tours, updatedtour } from '../Interfaces/tours.interface';
+import { reviews, updatedreview } from '../Interfaces/reviews.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +12,14 @@ import { updatedUser, users } from '../Interfaces/users.interface';
 export class ApiService {
   token = localStorage.getItem('token') as string
   constructor(private http:HttpClient) { }
+
+  createUser(newUser: users) {
+    return this.http.post<{ message: string, error: string }>('http://localhost:4100/users', newUser, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    });
+  }
 
   getUsers(){
     return this.http.get<{users:users[], error: string}>('http://localhost:4100/users', {
@@ -47,12 +58,21 @@ export class ApiService {
     })
   }
 
-
-  gettours(){
-    return this.http.get<{users:users[], error: string}>('http://localhost:4100/tour', {
+  createTour(newTour: tours) {
+    return this.http.post<{ message: string, error: string }>('http://localhost:4100/tour', newTour, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'token': this.token
+      })
+    });
+  }
+
+
+
+  
+  gettours(){
+    return this.http.get<{tours:tours[], error: string}>('http://localhost:4100/tour', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
       })
     })
   }
@@ -67,7 +87,7 @@ export class ApiService {
   }
 
   getonetour(id:string){
-    return this.http.get<{user:users[]}>(`http://localhost:4100/tour/${id}`, {
+    return this.http.get<{tour:tours[]}>(`http://localhost:4100/tour/${id}`, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -75,7 +95,7 @@ export class ApiService {
     })
   }
 
-  updatetour(id:string, details:updatedUser){
+  updatetour(id:string, details:updatedtour){
     return this.http.put<{message:string, error:string}>(`http://localhost:4100/tour/update/${id}`, details,{
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -84,8 +104,17 @@ export class ApiService {
     })
   }
 
+  createBooking(newBooking: bookings) {
+    return this.http.post<{ message: string, error: string }>('http://localhost:4100/booking', newBooking, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'token': this.token
+      })
+    });
+  }
+
   getallbookings(){
-    return this.http.get<{users:users[], error: string}>('http://localhost:4100/booking', {
+    return this.http.get<{bookings:bookings[], error: string}>('http://localhost:4100/booking', {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -103,7 +132,7 @@ export class ApiService {
   }
 
   getonebooking(id:string){
-    return this.http.get<{user:users[]}>(`http://localhost:4100/booking/${id}`, {
+    return this.http.get<{booking:bookings[]}>(`http://localhost:4100/booking/${id}`, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -111,7 +140,7 @@ export class ApiService {
     })
   }
 
-  updatebooking(id:string, details:updatedUser){
+  updatebooking(id:string, details:updatedbooking){
     return this.http.put<{message:string, error:string}>(`http://localhost:4100/booking/${id}`, details,{
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -120,8 +149,17 @@ export class ApiService {
     })
   }
 
+  createReview(newReview: reviews) {
+    return this.http.post<{ message: string, error: string }>('http://localhost:4100/review', newReview, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'token': this.token
+      })
+    });
+  }
+
   getallreviews(){
-    return this.http.get<{users:users[], error: string}>('http://localhost:4100/review', {
+    return this.http.get<{reviews:reviews[], error: string}>('http://localhost:4100/review', {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -139,7 +177,7 @@ export class ApiService {
   }
 
   getonereview(id:string){
-    return this.http.get<{user:users[]}>(`http://localhost:4100/review/${id}`, {
+    return this.http.get<{review:reviews[]}>(`http://localhost:4100/review/${id}`, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -147,7 +185,7 @@ export class ApiService {
     })
   }
 
-  updatereview(id:string, details:updatedUser){
+  updatereview(id:string, details:updatedreview){
     return this.http.put<{message:string, error:string}>(`http://localhost:4100/review/${id}`, details,{
       headers: new HttpHeaders({
         'Content-type': 'application/json',

@@ -144,11 +144,10 @@ Certainly! Here are the corresponding data types for each of the columns in the 
 
 Users Table:
 userId (Primary Key): INT
-username: VARCHAR(255)
+firstName: VARCHAR(255)
+lastName: VARCHAR(255)
 password: VARCHAR(MAX) (Assuming you are storing hashed passwords)
 email: VARCHAR(255)
-firstName: VARCHAR(255
-lastName: VARCHAR(255)
 isAdmin: BIT
 createdAt: DATETIME
 updatedAt: DATETIME
@@ -156,7 +155,8 @@ updatedAt: DATETIME
 Tours Table:
 tourId (Primary Key): INT
 destination: VARCHAR(255)
-duration: INT
+startDate: DATETIME
+endDate: DATETIME
 price: DECIMAL(10, 2) (Assuming a currency, adjust precision and scale accordingly)
 tourType: VARCHAR(255)
 isDeleted: BIT
@@ -180,3 +180,12 @@ rating: INT
 comment: TEXT
 createdAt: DATETIME
 updatedAt: DATETIME
+
+Jackson Mwadia mwadia@skiff.com 07747847 image.com 
+password: ^Migdyg$A9PF&6g68UU&ECq^
+
+to do
+login validation
+guard routes
+ui work: card, 
+one page scroll

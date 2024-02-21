@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE deletebooking(@bookingId VARCHAR)
+CREATE OR ALTER PROCEDURE deletebooking(@bookingId VARCHAR(255))
 AS
 BEGIN
     DELETE FROM bookings 
