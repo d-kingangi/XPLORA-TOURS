@@ -11,7 +11,7 @@ import { reviews, updatedreview } from '../Interfaces/reviews.interface';
 
 export class ApiService {
   token = localStorage.getItem('token') as string
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {  }
 
   createUser(newUser: users) {
     return this.http.post<{ message: string, error: string }>('http://localhost:4100/users', newUser, {
@@ -65,9 +65,6 @@ export class ApiService {
       })
     });
   }
-
-
-
   
   gettours(){
     return this.http.get<{tours:tours[], error: string}>('http://localhost:4100/tour', {

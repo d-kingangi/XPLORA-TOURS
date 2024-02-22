@@ -62,7 +62,7 @@ export const getOneUser = async(req: Request, res:Response)=>{
 
         const pool = await mssql.connect(sqlConfig)
 
-        let user = (await pool.request().input("user_id", id).execute('getoneuser')).recordset
+        let user = (await pool.request().input("userId", id).execute('getoneuser')).recordset
 
         return res.json({
             user
@@ -76,15 +76,16 @@ export const updateUser = async(req:Request, res: Response)=>{
     try {
         const id = req.params.id
 
-        const {firstname, lastname, email, password}:user = req.body
+        const {firstname, lastname, email, content, password}:user = req.body
 
         const pool = await mssql.connect(sqlConfig)
 
         let result = (await pool.request()
-        .input("user_id", id)
+        .input("userId", id)
         .input("firstname", mssql.VarChar, firstname)
         .input("lastname", mssql.VarChar, lastname)
         .input("email", mssql.VarChar, email)
+        .input("content", mssql.VarChar, content)
         .input("password", mssql.VarChar, password)
         .execute('updateuser')).rowsAffected
 
@@ -106,7 +107,7 @@ export const deleteUser = async(req: Request, res: Response)=>{
         const pool = await mssql.connect(sqlConfig)
 
         let result = (await pool.request()
-        .input("user_id", mssql.VarChar, id)
+        .input("userId", mssql.VarChar, id)
         .execute('deleteuser')
         ).rowsAffected
 

@@ -1,9 +1,10 @@
-/* Additional styles for the login page */
+
 
 .login-page {
     display: flex;
     flex-direction: row; 
     margin: 20px auto;
+    height: 60%;
 }
 
 .background-image {
@@ -100,3 +101,19 @@ input:focus {
         max-width: 100%;
     }
 }
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #4caf50;
+  }
+  
+  .error {
+    color: #f44336;
+  }
+  

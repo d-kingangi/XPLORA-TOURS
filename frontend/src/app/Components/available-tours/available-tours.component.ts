@@ -4,6 +4,8 @@ import { tours } from '../../Interfaces/tours.interface';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { bookings } from '../../Interfaces/bookings.interface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-available-tours',
@@ -16,8 +18,9 @@ import { ApiService } from '../../services/api.service';
 export class AvailableToursComponent {
 
   tours: tours[] = []
+  isAdmin: boolean = false;
 
-    constructor(private api: ApiService){
+    constructor(private api: ApiService, private authService: AuthService){
       this.fetchtours()
     }  
 
@@ -31,7 +34,30 @@ export class AvailableToursComponent {
       })
     }
 
-  bookNow(tour: any) {
-    console.log('Booking now:', tour);
-}
-}
+    deletetour(tourId: string) {
+      this.api.deletetour(tourId).subscribe(res=>{
+        console.log(res);
+
+        this.fetchtours()
+      })
+    }
+
+    bookNow(tour: any) {
+      this.authService.getUserDetails().subscribe(currentUser => {
+        if (currentUser) {
+          const userId = currentUser.userId;
+          const tourId = tour.tourId;
+          const bookingDate = new Date().toISOString();
+    
+          const newBooking: bookings = { userId, tourId, bookingDate };
+    
+          this.api.createBooking(newBooking).subscribe(res => {
+            console.log(res);
+          });
+        } else {
+          console.error('User not logged in.');
+        }
+      });
+    }
+  }
+

@@ -5,21 +5,54 @@
   <p class="subtitle">{{subtitle}}</p>
 </div>
 
-<div class="section-below">
+<hr>
+
+<div class="section-below" id="who-we-are">
+  <!-- <div><H3>WHO WE ARE</H3></div> -->
   <div class="card">
-      <p class="card-title">Special Offers & Discount!</p>
-      <p class="card-description">Quix Travel Is an award-winning team that offers round the clock support during your trip and 100% financial protection so you know you are in safe hands. With us you can dream, book and travel carefree</p>
+    <p class="card-title">Special Offers & Discount!</p>
+    <p class="card-description">Quix Travel's award-winning offers round the clock support. Dream, book and travel carefree</p>
+    <img src="../../../assets/pexels-africa-vacation-safaris-3529692.jpg" alt="Card 1 Image" class="card-image">
   </div>
 
   <div class="card">
-      <p class="card-title">Local Destinations</p>
-      <p class="card-description">Leading Tour Packages Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
+    <p class="card-title">Local Destinations</p>
+    <p class="card-description">Book Hotel rooms and enjoy your holidays with a distinctive experience. </p>
+    <img src="../../../assets/pexels-aboodi-vesakaran-13980487.jpg" alt="Card 2 Image" class="card-image">
   </div>
 
   <div class="card">
-      <p class="card-title">Kenya's leading tour and travel company</p>
-      <p class="card-description">Kenya's leading tour and travels Booking website,Over 30,000 packages worldwide..</p>
+    <p class="card-title">Kenya's leading tour company</p>
+    <p class="card-description">Kenya's leading tour and travels Booking website, Over 30,000 packages worldwide..</p>
+    <img src="../../../assets/pexels-kureng-workx-4153135.jpg" alt="Card 3 Image" class="card-image">
+  </div>
+
+  <div class="card">
+    <p class="card-title">Stress Free Tours</p>
+    <p class="card-description">Kenya's leading tour and travels Booking website, Over 30,000 packages worldwide..</p>
+    <img src="../../../assets/pexels-antony-trivet-12959528.jpg" alt="Card 3 Image" class="card-image">
   </div>
 </div>
 
-<!-- <app-whoweare [whoweare-title]="''" [whoweare-sub]="" [whoweareimage]=""></app-whoweare> -->
+
+<hr>
+
+<div  id="available-tours">
+  <div class="services-title">Available Tours</div>
+    <div class="cards">
+      <div class="card" *ngFor="let tour of tours; let i = index">
+        <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
+            <h4 class="text-lg font-semibold">{{tour.destination}}</h4>
+            <p class="text-xs"><b>$</b> {{tour.price}} </p>
+            <p class="text-xs"><b>Start Date: </b>{{tour.startDate}} </p>
+            <p class="text-xs"><b>End Date: </b>{{tour.endDate}} </p>
+            <button class="book-now-button" (click)="bookNow(tour)">Book Now</button>
+            <button class="delete-now-button" (click)="deletetour(tour.tourId)" value="delete"></button>
+            <!-- <button class="update-now-button" (click="updatetour()" value="update")></button> -->
+        </div>
+        <img src="{{tour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
+      </div>
+
+    </div>
+    <div><button class="all-tours-btn" [routerLink]="['/view-adventures']">View All</button></div>
+</div>

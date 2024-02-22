@@ -5,6 +5,7 @@ export interface bookings{
 }
 
 export interface updatedbooking{
+    bookingId: string;
     userId: string;
     tourId: string;
     bookingDate: string,

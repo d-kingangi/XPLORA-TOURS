@@ -8,7 +8,8 @@ CREATE TABLE tours(
     isDeleted BIT DEFAULT 0,
 )
 
--- SELECT * FROM tours
+SELECT * FROM tours
 
 -- DELETE FROM tours
 -- WHERE destination = 'H';
+

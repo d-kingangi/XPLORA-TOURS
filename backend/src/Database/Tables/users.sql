@@ -9,11 +9,11 @@ CREATE TABLE users(
     )
 
     -- INSERT INTO USERS(userId, firstname, lastname, email, password, isAdmin)
-    -- VALUES('Tim', 'Roberts', )
+    -- -- VALUES('Tim', 'Roberts', )
     -- Select * FROM users;
 -- UPDATE users
 -- SET isAdmin = 1
--- WHERE firstname = 'Duncan'
+-- WHERE email = 'wood@hooli.com'
 --     ALTER TABLE users
 -- RENAME COLUMN passsword TO password;
 

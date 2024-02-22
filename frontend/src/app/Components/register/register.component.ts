@@ -18,8 +18,10 @@ export class RegisterComponent {
   title="Join Quix"
 
   registerForm!: FormGroup
+  errorMessage: string = '';
+  successMessage: string = '';
 
-  constructor(private fb:FormBuilder, private apiService: ApiService ){
+  constructor(private fb:FormBuilder, private apiService: ApiService, private router: Router ){
     this.registerForm = this.fb.group({
       firstname:['',[Validators.required]],
       lastname:['', [Validators.required]],
@@ -46,6 +48,11 @@ export class RegisterComponent {
         console.error('Registration error:', error);
       }
     );
+
+    setTimeout(() => {
+      this.navigateToLogin();
+    }, 1500);
+
   }
 
   private success(message: string) {
@@ -53,8 +60,9 @@ export class RegisterComponent {
     this.registerForm.reset()
   }
 
-  // navigateToLogin(){
-  //   this.router.navigate()
-  // }
+  navigateToLogin(){
+    this.router.navigate(['/login'])
+    
+  }
 
 }

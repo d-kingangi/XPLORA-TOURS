@@ -2,9 +2,10 @@ import mssql, { VarChar } from 'mssql';
 import { Request, Response } from "express";
 import {v4} from 'uuid'
 import {booking} from "../Interfaces/bookings";
-import { sqlConfig } from "../Config/sql.config";;
+import { sqlConfig } from "../Config/sql.config";import { ExtendedUserRequest } from '../Middlewares/verifyTokens';
+;
 
-export const createbooking = async(req: Request, res: Response)=>{
+export const createbooking = async(req: ExtendedUserRequest, res: Response)=>{
     try {
         const id = v4()
 

@@ -17,6 +17,8 @@ export class ToursComponent {
   title = 'Create Tour'
 
   tourForm: FormGroup
+  successMessage: string = '';
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder,  private apiService: ApiService) {
     this.tourForm = this.fb.group({
@@ -51,6 +53,5 @@ export class ToursComponent {
     console.log('Created tour successfully:', message)
     this.tourForm.reset()
   }
-
   
 }

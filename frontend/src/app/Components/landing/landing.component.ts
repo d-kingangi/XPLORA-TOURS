@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+import { tours } from '../../Interfaces/tours.interface';
+import { bookings } from '../../Interfaces/bookings.interface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [NavbarComponent, RouterLink, RouterOutlet],
+  imports: [ CommonModule, NavbarComponent, RouterLink, RouterOutlet],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
@@ -14,13 +19,47 @@ export class LandingComponent {
   title:string = 'View'
   subtitle:string = 'Kenya(Maasai Mara, Samburu, Mt Elgon, Ol Pegeta)'
 
+  tours: tours[] = []
 
-  //who are section
+    constructor(private api: ApiService, private authService: AuthService){
+      this.fetchtours()
+    }  
 
-  // whoweareTitle = "Who We Are"
+    fetchtours(){
+      this.api.gettours().subscribe(res=>{
+        console.log(res);
+  
+        this.tours = res.tours || []
+        
+        console.log(this.tours)
+      })
+    }
 
-  // whoweareSub = "At Quix Travels, we offer a diverse range of travel experiences, including tours around Kenya that showcase the rich cultural and natural wonders of our beautiful country. Explore exotic places, hidden gems, and breathtaking landscapes, all carefully curated to provide you with unforgettable memories."
+    bookNow(tour: any) {
+      this.authService.getUserDetails().subscribe(currentUser => {
+        if (currentUser) {
+          const userId = currentUser.userId;
+          const tourId = tour.tourId;
+          const bookingDate = new Date().toISOString();
+    
+          const newBooking: bookings = { userId, tourId, bookingDate };
+    
+          this.api.createBooking(newBooking).subscribe(res => {
+            console.log(res);
+          });
+        } else {
+          console.error('User not logged in.');
+        }
+      });
+    }
+    
+    deletetour(tourId: string) {
+      this.api.deletetour(tourId).subscribe(res=>{
+        console.log(res);
 
-  // whoweareimg = ""
-
+        this.fetchtours()
+      })
+    }
+    
+        
 }

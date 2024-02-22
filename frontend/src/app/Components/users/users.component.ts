@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 import { ApiService } from '../../services/api.service';
 import { users } from '../../Interfaces/users.interface';
 import { RouterLink } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [NavbarComponent, AdminDashboardComponent, RouterLink],
+  imports: [NavbarComponent, FooterComponent, AdminDashboardComponent, RouterLink, CommonModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
@@ -23,8 +25,6 @@ export class UsersComponent {
   fetchUsers(){
     this.api.getUsers().subscribe(res=>{
       console.log(res);
-
-
       this.users = res.users
     })
   }

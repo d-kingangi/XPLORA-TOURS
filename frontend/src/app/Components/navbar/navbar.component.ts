@@ -14,6 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
   currentroute = (this.route.snapshot.routeConfig?.path)
   token = localStorage.getItem('token') as string
+
   constructor(private router:Router, private route:ActivatedRoute, private authService: AuthService){
 
     if(this.currentroute == 'login'){
@@ -22,8 +23,7 @@ export class NavbarComponent {
       }
     }
   }
-  
-  // token = localStorage.getItem('token')
+
   isLoggedIn = localStorage.getItem('token')
 
   today = new Date()
@@ -36,8 +36,16 @@ export class NavbarComponent {
     this.router.navigate(['register'])
   }
 
-  logout(){
-    this.authService.logout
-    localStorage.clear()
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        localStorage.removeItem('token');
+        window.location.reload();
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
   }
 }

@@ -13,6 +13,10 @@
     <div class="right-section">
         <div class="blurry-background"></div>
 
+        <div class="message" [ngClass]="{'success': successMsg, 'error': errorMsg}">
+            {{ successMsg || errorMsg }}
+          </div>
+
         <div class="login">
             <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
                 <div><h3>{{ title }}</h3></div>

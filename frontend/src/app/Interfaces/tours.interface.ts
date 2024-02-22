@@ -1,4 +1,5 @@
 export interface tours{
+    tourId: string,
     destination: string,
     price: number,
     startDate: string,
