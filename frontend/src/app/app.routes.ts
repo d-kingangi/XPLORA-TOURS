@@ -9,7 +9,7 @@ import { LandingComponent } from './Components/landing/landing.component';
 import { AvailableToursComponent } from './Components/available-tours/available-tours.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './Components/users/users.component';
-import { AdminGuard } from './admin.guard';
+import { ViewBookingComponent } from './Components/view-booking/view-booking.component';
 
 export const routes: Routes = [
     {path:'', component: LandingComponent},
@@ -21,6 +21,7 @@ export const routes: Routes = [
     {path: 'add-tour', component: ToursComponent },
     {path: 'view-users', component: UsersComponent},
     {path: 'add-users', component: UsersComponent},
+    {path: 'view-bookings', component: ViewBookingComponent},
     {path:'**', component: NotfoundComponent},   
 ];
 

@@ -1,0 +1,7 @@
+POST http://localhost:4100/booking
+
+{
+    "userId": "4794946-595958-45948",
+    "tourId":"438755-54585-4575649",
+    "bookingDate": "04-04-2024"
+}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { tours } from '../../Interfaces/tours.interface';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { bookings } from '../../Interfaces/bookings.interface';
 import { AuthService } from '../../services/auth.service';

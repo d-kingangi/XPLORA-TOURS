@@ -1,7 +1,7 @@
 import mssql from 'mssql'
 import { createtour } from '../tours.controller'
 
-describe("Tour Creation", ()=>{
+describe("Tour created Successfully", ()=>{
 
     let res: any
 
@@ -22,7 +22,7 @@ describe("Tour Creation", ()=>{
             }
         }
 
-        const mockedInput = jest.fn().mockReturnThis() //makes it chainable
+        const mockedInput = jest.fn().mockReturnThis() 
 
         const mockedExecute = jest.fn().mockResolvedValue({rowsAffected: [1]})
 
@@ -39,7 +39,7 @@ describe("Tour Creation", ()=>{
 
         await createtour(req as any, res)
 
-        expect(res.json).toHaveBeenCalledWith({message: "Tour created successfully"})
+        expect(res.json).toHaveBeenCalledWith({message: "Tour created Successfully"})
     })
 })
 
