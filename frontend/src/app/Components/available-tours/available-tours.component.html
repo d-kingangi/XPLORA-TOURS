@@ -16,3 +16,18 @@
         </div>
     </div>
 </div>
+
+<div class="">
+    <div class="services-title">Deleted Tours</div>
+    <div class="cards">
+        <div class="card" *ngFor="let deletedTour of deletedtours;  let i = index">
+            <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
+                <h4>{{deletedTour.destination}}</h4>
+                <p><b>$</b> {{deletedTour.price}} </p>
+                <p><b>Start Date: </b>{{deletedTour.startDate}} </p>
+                <p><b>End Date: </b>{{deletedTour.endDate}} </p> 
+            </div>
+            <img src="{{deletedTour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
+        </div> 
+    </div>
+</div>

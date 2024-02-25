@@ -77,6 +77,15 @@ export class ApiService {
     })
   }
 
+  getdeletedtours(){
+    return this.http.get<{tours:tours[], error: string}>('http://localhost:4100/tour', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'token': this.token
+      })
+    })
+  }
+
   deletetour(id:string){
     return this.http.delete(`http://localhost:4100/tour/delete/${id}`, {
       headers: new HttpHeaders({

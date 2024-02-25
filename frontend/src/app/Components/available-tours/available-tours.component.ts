@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { tours } from '../../Interfaces/tours.interface';
+import { tours, deletedtours } from '../../Interfaces/tours.interface';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
@@ -18,7 +18,9 @@ import { Observable, of } from 'rxjs';
 
 export class AvailableToursComponent implements OnInit {
 
-  tours: tours[] = []
+  tours: tours[] = [];
+  deletedtours: deletedtours[] =[]
+
   isAdmin: boolean = false;
 
     constructor(private api: ApiService, private authService: AuthService){
@@ -51,6 +53,16 @@ export class AvailableToursComponent implements OnInit {
         this.tours = res.tours
         
         console.log(this.tours)
+      })
+    }
+
+    fetchdeletedtours(){
+      this.api.getdeletedtours().subscribe(res=>{
+        console.log(res);
+  
+        this.deletedtours = res.tours
+        
+        console.log(this.deletedtours)
       })
     }
 

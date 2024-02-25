@@ -46,6 +46,19 @@ export const getalltours =async (req:Request, res:Response) => {
     }  
 }
 
+export const getdeletedtours =async (req: Request, res: Response) => {
+    try {
+        const pool = await mssql.connect(sqlConfig);
+        let alltours = (await pool.request().execute('getdeletedtours')).recordset
+
+        return res.status(200).json({
+            tours: alltours
+        })
+    } catch (error) {
+        return res.json({error})
+    } 
+}
+
 export const getonetour = async (req:Request, res:Response) => {
     try {
         const id = req.params.id
