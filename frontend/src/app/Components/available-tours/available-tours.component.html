@@ -9,8 +9,8 @@
                 <p><b>Start Date: </b>{{tour.startDate}} </p>
                 <p><b>End Date: </b>{{tour.endDate}} </p>
                 <button class="book-now-button" (click)="bookNow(tour)" *ngIf="!isAdmin">Book Now</button>
-                <button class="delete-now-button" (click)="deletetour(tour.tourId)" *ngIf="!isAdmin" value="delete">Delete</button>
-                <!-- <button class="update-now-button" (click="updatetour() *ngIf="isAdmin"" value="update")>Update</button> -->
+                <button class="delete-now-button" (click)="deletetour(tour.tourId)" *ngIf="isAdmin" value="delete">Delete</button>
+                <button class="update-now-button" (click="updatetour()" *ngIf="isAdmin")>Update</button>
             </div>
             <img src="{{tour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
         </div>

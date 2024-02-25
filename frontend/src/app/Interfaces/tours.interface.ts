@@ -8,6 +8,7 @@ export interface tours{
 }
 
 export interface updatedtour{
+    tourId: string,
     destination: string,
     price: number,
     startDate: string,

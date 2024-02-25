@@ -41,7 +41,7 @@ export class NavbarComponent {
       next: res => {
         console.log(res);
         localStorage.removeItem('token');
-        window.location.reload();
+        this.router.navigate(['/']);
       },
       error: err => {
         console.log(err);

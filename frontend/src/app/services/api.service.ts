@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { updatedUser, users } from '../Interfaces/users.interface';
 import { bookings, updatedbooking } from '../Interfaces/bookings.interface';
 import { tours, updatedtour } from '../Interfaces/tours.interface';
@@ -69,7 +71,8 @@ export class ApiService {
   gettours(){
     return this.http.get<{tours:tours[], error: string}>('http://localhost:4100/tour', {
       headers: new HttpHeaders({
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
+        'token': this.token
       })
     })
   }
@@ -190,5 +193,42 @@ export class ApiService {
       })
     })
   }
+
+  // getTourWithBookingsAndUsers(tourId: string): Observable<any> {
+  //   const tour$ = this.getonetour(tourId);
+  //   const bookings$ = this.getBookingsForTour(tourId);
+
+  //   return forkJoin([tour$, bookings$]).pipe(
+  //     map(([tourDetails, bookings]) => {
+  //       return {
+  //         tourDetails,
+  //         bookings: bookings.map(booking => ({
+  //           ...booking,
+  //           user: null  // User details will be fetched in the next step
+  //         }))
+  //       };
+  //     }),
+  //     map(combinedData => {
+  //       const userDetailRequests = combinedData.bookings.map(booking => this.getOneUserDetails(booking.userId));
+  //       return forkJoin(userDetailRequests).pipe(
+  //         map(userDetails => {
+  //           combinedData.bookings.forEach((booking, index) => {
+  //             booking.user = userDetails[index].user;
+  //           });
+  //           return combinedData;
+  //         })
+  //       );
+  //     })
+  //   );
+  // }
+
+  // private getBookingsForTour(tourId: string): Observable<any[]> {
+  //   return this.http.get<any[]>(`http://localhost:4100/tour/bookings/${tourId}`, {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json',
+  //       'token': this.token
+  //     })
+  //   });
+  // }
   
 }

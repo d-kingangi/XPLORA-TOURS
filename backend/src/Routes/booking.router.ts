@@ -6,8 +6,8 @@ const bookingRouter = Router()
 
 bookingRouter.post('/', createbooking)
 bookingRouter.get('/', verifyToken, getallbookings)
-bookingRouter.get('/', verifyToken, getonebooking)
-bookingRouter.purge('/update/:id', verifyToken, updatebooking)
+bookingRouter.get('/:id', verifyToken, getonebooking)
+bookingRouter.put('/update/:id', verifyToken, updatebooking)
 bookingRouter.delete('/delete/:id', verifyToken, deletebooking)
 
 export default bookingRouter

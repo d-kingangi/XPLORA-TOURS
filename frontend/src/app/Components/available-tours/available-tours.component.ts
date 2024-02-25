@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { tours } from '../../Interfaces/tours.interface';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -6,6 +6,7 @@ import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { bookings } from '../../Interfaces/bookings.interface';
 import { AuthService } from '../../services/auth.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-available-tours',
@@ -15,14 +16,33 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './available-tours.component.css'
 })
 
-export class AvailableToursComponent {
+export class AvailableToursComponent implements OnInit {
 
   tours: tours[] = []
   isAdmin: boolean = false;
 
     constructor(private api: ApiService, private authService: AuthService){
       this.fetchtours()
-    }  
+    }
+
+    getUserDetails(): Observable<any> {
+      const storedUser = localStorage.getItem('user');
+      console.log('Stored User:', storedUser);
+
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        return of(user);
+      } else {
+        return of({});
+      }
+    }
+    
+    ngOnInit() {
+      const isAdminString = localStorage.getItem('isAdmin');
+      this.isAdmin = isAdminString ? JSON.parse(isAdminString) : false;
+  
+      this.fetchtours();
+    }
 
     fetchtours(){
       this.api.gettours().subscribe(res=>{
@@ -43,13 +63,18 @@ export class AvailableToursComponent {
     }
 
     bookNow(tour: any) {
-      this.authService.getUserDetails().subscribe(currentUser => {
-        if (currentUser) {
+      this.authService.getUserDetails().subscribe((currentUser: any) => {
+        console.log(currentUser);
+        
+        if (currentUser && currentUser.userId) {
           const userId = currentUser.userId;
           const tourId = tour.tourId;
           const bookingDate = new Date().toISOString();
     
           const newBooking: bookings = { userId, tourId, bookingDate };
+
+          console.log(newBooking);
+          
     
           this.api.createBooking(newBooking).subscribe(res => {
             console.log(res);
@@ -59,5 +84,7 @@ export class AvailableToursComponent {
         }
       });
     }
+
+    updateTour(){}
   }
 

@@ -22,7 +22,6 @@ export const createUser = async(req: Request, res: Response)=>{
                 error: error
             })
         }
-        console.log(req.body);
         const pool = await mssql.connect(sqlConfig)
 
         let result = await(await pool.request()

@@ -10,7 +10,7 @@ CREATE TABLE users(
 
     -- INSERT INTO USERS(userId, firstname, lastname, email, password, isAdmin)
     -- -- VALUES('Tim', 'Roberts', )
-    -- Select * FROM users;
+    Select * FROM users;
 -- UPDATE users
 -- SET isAdmin = 1
 -- WHERE email = 'wood@hooli.com'
@@ -25,3 +25,5 @@ CREATE TABLE users(
 --     ALTER TABLE users
 -- ALTER COLUMN userId VARCHAR(255);
 --  DROP TABLE users
+
+-- DELETE FROM users WHERE isDeleted = 1

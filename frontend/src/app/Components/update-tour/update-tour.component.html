@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="successMessage" class="text-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+<div class="updateTourForm">
+    <form [formGroup]="updateTourForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="destination">Destination</label><br>
+          <input type="text" id="destination" formControlName="destination"><br>
+          <div *ngIf="updateTourForm.get('destination')?.invalid && updateTourForm.get('destination')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+        </div>
+
+        <div>
+          <label for="content">Feature Image (URL)</label><br>
+          <input type="text" id="content" formControlName="content"><br>
+          <div *ngIf="updateTourForm.get('content')?.invalid && updateTourForm.get('content')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+        </div>
+      
+        <div>
+          <label for="price">Price (USD)</label><br>
+          <input type="text" id="price" formControlName="price"><br>
+          <div *ngIf="updateTourForm.get('price')?.invalid && updateTourForm.get('price')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+        </div>
+      
+        <div>
+          <label for="startDate">Start Date</label><br>
+          <input type="date" id="startDate" formControlName="startDate"><br>
+          <div *ngIf="updateTourForm.get('startDate')?.invalid && updateTourForm.get('startDate')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+        </div>
+      
+        <div>
+          <label for="endDate">End Date</label><br>
+          <input type="date" id="endDate" formControlName="endDate"><br>
+          <div *ngIf="updateTourForm.get('endDate')?.invalid && updateTourForm.get('endDate')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+        </div>
+      
+        <button type="submit" [disabled]="updateTourForm.invalid">Submit</button>
+      </form>   
+</div>

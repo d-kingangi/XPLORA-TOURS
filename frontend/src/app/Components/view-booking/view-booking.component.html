@@ -1,6 +1,8 @@
+<app-navbar></app-navbar>
+
 <!-- <div *ngIf="tours.length > 0; else noToursMessage">
-    <div *ngFor="">
-      <h2>{{ tour.destination }}</h2>
+    <div *ngFor="let tour of tours">
+      <h2>{{ tour.tourId }}</h2>
       <table>
         <thead>
           <tr>
@@ -11,16 +13,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let booking of tour.bookings">
-            <td>{{ booking.firstName }}</td>
-            <td>{{ booking.lastName }}</td>
-            <td>{{ booking.email }}</td>
+          <tr *ngFor="let booking of bookings; let i i = index">
+            <td>{{ booking.bookinId }}</td>
+            <td>{{ booking.userId }}</td>
+            <td>{{ booking.tourId }}</td>
             <td>{{ booking.bookingDate}}</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
+</div>
   <ng-template #noToursMessage>
     <p>No tours available.</p>
   </ng-template> -->

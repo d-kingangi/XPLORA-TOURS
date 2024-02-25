@@ -1,7 +1,14 @@
 POST http://localhost:4100/booking
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZGVlZGY2Ni00NGJlLTRjYWQtOGMxNS1lYTIzMzYyNmViNDMiLCJmaXJzdG5hbWUiOiJEdW5jYW4iLCJsYXN0bmFtZSI6IktpbmcnYW5nJ2kiLCJlbWFpbCI6ImR1bmNhbjQ3QGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlzRGVsZXRlZCI6dHJ1ZSwiY29udGVudCI6ImltYWdlLmNvbSIsImlhdCI6MTcwODgzNzI3NiwiZXhwIjoxNzA4ODQwODc2fQ._ItPJlzohv595ZvJpXz0_Q3vlLv4nSw8BtiQWOi0aWM
 
 {
-    "userId": "4794946-595958-45948",
-    "tourId":"438755-54585-4575649",
+    "userId": "860c70c4-dd21-4de4-82ed-ec2b070fe913",
+    "tourId":"5",
     "bookingDate": "04-04-2024"
 }
+
+###
+GET http://localhost:4100/booking/
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTgzM2ZlNy1kZjhjLTRiZWQtODdjOS0yOTIzNDA4NDk0NjMiLCJmaXJzdG5hbWUiOiJHYXZpbiIsImxhc3RuYW1lIjoiV29vZCIsImVtYWlsIjoid29vZEBob29saS5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0RlbGV0ZWQiOmZhbHNlLCJjb250ZW50IjoiaW1hZ2UuY29tIiwiaWF0IjoxNzA4ODY0MzMxLCJleHAiOjE3MDg4Njc5MzF9.0KDbpReR70q2Qsj1QgDHpq8SQur-ftLO94ShAOSSC1c

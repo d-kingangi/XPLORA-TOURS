@@ -3,12 +3,12 @@ POST http://localhost:4100/auth/login
 Content-Type: application/json
 
 {
-  "email":"duncan47@gmail.com",
-  "password":"duncan"
+  "email":"wood@hooli.com",
+  "password":"^Migdyg$A9PF&6g68UU&ECq^"
 }
 
 
 ###
 GET http://localhost:4100/auth/checkdetails
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZGVlZGY2Ni00NGJlLTRjYWQtOGMxNS1lYTIzMzYyNmViNDMiLCJmaXJzdG5hbWUiOiJEdW5jYW4iLCJsYXN0bmFtZSI6IktpbmcnYW5nJ2kiLCJlbWFpbCI6ImR1bmNhbjQ3QGdtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlLCJjb250ZW50IjoiaW1hZ2UuY29tIiwiaWF0IjoxNzA4NTMxNzY2LCJleHAiOjE3MDg1MzUzNjZ9.Wu98npgLU7KjBy-OcoO_hvqJGcgKPqKey_iY_-Vdpck
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTgzM2ZlNy1kZjhjLTRiZWQtODdjOS0yOTIzNDA4NDk0NjMiLCJmaXJzdG5hbWUiOiJHYXZpbiIsImxhc3RuYW1lIjoiV29vZCIsImVtYWlsIjoid29vZEBob29saS5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0RlbGV0ZWQiOmZhbHNlLCJjb250ZW50IjoiaW1hZ2UuY29tIiwiaWF0IjoxNzA4ODQyODIzLCJleHAiOjE3MDg4NDY0MjN9.yDJW18SiFZpiSq62lW6-vZeRBJEkiVt5OYciB2EexH4

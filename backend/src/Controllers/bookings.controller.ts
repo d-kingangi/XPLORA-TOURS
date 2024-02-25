@@ -18,14 +18,12 @@ export const createbooking = async(req: ExtendedUserRequest, res: Response)=>{
         let result = (await pool.request()
         .input("bookingId", VarChar, id)
         .input("userId", mssql.VarChar, userId)
-        .input("tourId", mssql.VarChar, VarChar)
+        .input("tourId", mssql.VarChar, tourId)
         .input("bookingDate", mssql.DateTime, bookingDate)
         .execute('createbooking')).rowsAffected
 
-        console.log(result);
-
         return res.json({
-            message: "Tour created Successfully"
+            message: "Booking created Successfully"
         })
     } catch (error) {
         return res.json({error: error})
@@ -35,10 +33,10 @@ export const createbooking = async(req: ExtendedUserRequest, res: Response)=>{
 export const getallbookings =async (req:Request, res:Response) => {
     try {
         const pool = await mssql.connect(sqlConfig)
-        let allbookings = (await pool.request().execute('getallbooking')).recordset
+        let allbookings = (await pool.request().execute('getallbookings')).recordset
 
         return res.status(200).json({
-            projects: allbookings
+            bookings: allbookings
         })
     } catch (error) {
         return res.json({error})    
@@ -51,10 +49,10 @@ export const getonebooking =async (req:Request, res: Response) => {
 
         const pool = await mssql.connect(sqlConfig)
 
-        let project = (await pool.request().input("bookingId", id).execute('getonetour')).recordset
+        let booking = (await pool.request().input("bookingId", id).execute('getonetour')).recordset
 
         return res.json({
-            project
+            booking
         })
     }catch(error){
         return res.json({error})
@@ -79,7 +77,7 @@ export const updatebooking =async (req:Request, res:Response) => {
         console.log(result)
 
         return res.status(200).json({
-            message: "Project Updated successfully"
+            message: "Updated Updated successfully"
         })
     }catch(error){
         return res.json({error})

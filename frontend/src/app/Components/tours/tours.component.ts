@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import  { tours } from '../../Interfaces/tours.interface'
+import { tours } from '../../Interfaces/tours.interface'
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
