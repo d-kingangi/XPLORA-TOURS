@@ -39,13 +39,17 @@ export class RegisterComponent {
       (res) => {
         console.log(res);
         if (res.message) {
-          this.success(res.message);
+          this.successMessage = res.message; 
+          this.errorMessage = ''; 
         } else if (res.error) {
-          console.log('It exists', res.error);
+          this.errorMessage = res.error; 
+          this.successMessage = ''; 
         }
       },
       (error) => {
         console.error('Registration error:', error);
+        this.errorMessage = 'Registration failed. Please try again.'; 
+        this.successMessage = ''; 
       }
     );
 

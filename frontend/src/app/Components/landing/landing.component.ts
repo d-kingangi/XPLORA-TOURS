@@ -6,6 +6,7 @@ import { ApiService } from '../../services/api.service';
 import { tours } from '../../Interfaces/tours.interface';
 import { bookings } from '../../Interfaces/bookings.interface';
 import { AuthService } from '../../services/auth.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-landing',

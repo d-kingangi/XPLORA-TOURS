@@ -44,11 +44,11 @@
         <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
             <h4 class="text-lg font-semibold">{{tour.destination}}</h4>
             <p class="text-xs"><b>$</b> {{tour.price}} </p>
-            <p class="text-xs"><b>Start Date: </b>{{tour.startDate}} </p>
-            <p class="text-xs"><b>End Date: </b>{{tour.endDate}} </p>
+            <p class="text-xs"><b>Start Date: </b>{{tour.startDate | date:"shortDate"}} </p>
+            <p class="text-xs"><b>End Date: </b>{{tour.endDate | date:"shortDate"}} </p>
             <button class="book-now-button" (click)="bookNow(tour)">Book Now</button>
             <button class="delete-now-button" (click)="deletetour(tour.tourId)" value="delete"></button>
-            <!-- <button class="update-now-button" (click="updatetour()" value="update")></button> -->
+            <!-- <button class="update-now-button" (click)="updatetour()" value="update"></button> -->
         </div>
         <img src="{{tour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
       </div>

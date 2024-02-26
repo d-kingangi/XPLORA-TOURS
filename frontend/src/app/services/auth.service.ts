@@ -30,7 +30,7 @@ export class AuthService {
 
   getUserDetails(token?: string): Observable<{ userId: string, firstname: string, lastname: string, email: string, isAdmin: any }> {
     if (!token) {
-      return of({ userId: '', firstname: '', lastname: '', email: '', isAdmin: false});
+      return of({ userId: '', firstname: '', lastname: '', email: '', isAdmin: true});
     }
 
     return this.readToken(token).pipe(

@@ -8,7 +8,7 @@
   background-image: url(../../../assets/pexels-donald-kamau-7467680.jpg);
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +44,7 @@
   width: 30%; 
   height: 350px;  
   position: relative;
+  /* transform: translateY(-120px); */
 }
 
 .card-image {
@@ -115,7 +116,7 @@
   }
 }
 
-.card {
+.card{
   display: flex;
   flex-direction: column;
   gap: 40px;

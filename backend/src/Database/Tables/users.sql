@@ -10,10 +10,10 @@ CREATE TABLE users(
 
     -- INSERT INTO USERS(userId, firstname, lastname, email, password, isAdmin)
     -- -- VALUES('Tim', 'Roberts', )
-    Select * FROM users;
--- UPDATE users
--- SET isAdmin = 1
--- WHERE email = 'wood@hooli.com'
+    -- Select * FROM users;
+UPDATE users
+SET isAdmin = 1
+WHERE email = 'kingangiduncan47@gmail.com'
 --     ALTER TABLE users
 -- RENAME COLUMN passsword TO password;
 

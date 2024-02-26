@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <div class="">
     <div class="services-title">Available Tours</div>
     <div class="cards">
@@ -10,22 +11,23 @@
                 <p><b>End Date: </b>{{tour.endDate}} </p>
                 <button class="book-now-button" (click)="bookNow(tour)" *ngIf="!isAdmin">Book Now</button>
                 <button class="delete-now-button" (click)="deletetour(tour.tourId)" *ngIf="isAdmin" value="delete">Delete</button>
-                <button class="update-now-button" (click="updatetour()" *ngIf="isAdmin")>Update</button>
+                <button class="update-now-button" (click)="updateTour()" *ngIf="isAdmin">Update</button>
             </div>
             <img src="{{tour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
         </div>
     </div>
 </div>
 
-<div class="">
+<div class="" *ngIf="!isAdmin">
     <div class="services-title">Deleted Tours</div>
     <div class="cards">
         <div class="card" *ngFor="let deletedTour of deletedtours;  let i = index">
             <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
                 <h4>{{deletedTour.destination}}</h4>
                 <p><b>$</b> {{deletedTour.price}} </p>
-                <p><b>Start Date: </b>{{deletedTour.startDate}} </p>
-                <p><b>End Date: </b>{{deletedTour.endDate}} </p> 
+                <p><b>Start Date: </b>{{deletedTour.startDate  | date:"shortDate" }} </p>
+                <p><b>End Date: </b>{{deletedTour.endDate  | date:"shortDate" }} </p> 
+                <button class="recover-now-button" (click)="recoverTour()" *ngIf="!isAdmin">Recover</button>
             </div>
             <img src="{{deletedTour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">
         </div> 

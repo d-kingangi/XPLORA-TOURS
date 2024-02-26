@@ -7,6 +7,7 @@ import { ApiService } from '../../services/api.service';
 import { bookings } from '../../Interfaces/bookings.interface';
 import { AuthService } from '../../services/auth.service';
 import { Observable, of } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-available-tours',
@@ -98,5 +99,7 @@ export class AvailableToursComponent implements OnInit {
     }
 
     updateTour(){}
+
+    recoverTour(){}
   }
 

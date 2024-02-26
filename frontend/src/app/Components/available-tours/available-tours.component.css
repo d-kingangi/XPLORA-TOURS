@@ -72,3 +72,12 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.recover-now-button{
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
