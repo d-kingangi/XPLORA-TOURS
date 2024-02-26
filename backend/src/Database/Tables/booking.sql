@@ -16,4 +16,6 @@ CREATE TABLE bookings(
 -- ALTER TABLE bookings ADD isConfimed BIT DEFAULT 0
 
 -- SELECT * FROM bookings
+-- SELECT * FROM tours
+
 

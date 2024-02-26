@@ -9,14 +9,15 @@ function createTransporter(config: mail_configs){
 
     return transporter
 }
+
 let configuration: mail_configs = ({
-    service : 'gmail',
-    host: 'smtp.gmail.com', 
+    service : '',
+    host: '', 
     port: 587,
     requireTLS: true,
     auth:{
-        user: "itsronduncan@gmail.com",
-        pass: "zlmcygmuislzustk"
+        user: "",
+        pass: ""
     }
 })
 

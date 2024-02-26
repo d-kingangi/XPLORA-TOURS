@@ -67,7 +67,7 @@ export class LoginComponent {
 
         setTimeout(() => {
           this.visible2 = false;
-        }, 2000);
+        }, 3000);
       }
     });
   }
