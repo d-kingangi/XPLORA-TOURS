@@ -57,9 +57,9 @@ export class LoginComponent {
           localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
           if (userDetails.isAdmin) {
-            this.router.navigate(['admin']);
+            this.router.navigate(['/admin']);
           } else {
-            this.router.navigate(['']);
+            this.router.navigate(['/']);
           }
         });
 

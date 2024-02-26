@@ -7,8 +7,8 @@
             <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
                 <h4>{{tour.destination}}</h4>
                 <p><b>$</b> {{tour.price}} </p>
-                <p><b>Start Date: </b>{{tour.startDate}} </p>
-                <p><b>End Date: </b>{{tour.endDate}} </p>
+                <p><b>Start Date: </b>{{tour.startDate | date:"longDate"}} </p>
+                <p><b>End Date: </b>{{tour.endDate | date:"longDate"}} </p>
                 <button class="book-now-button" (click)="bookNow(tour)" *ngIf="!isAdmin">Book Now</button>
                 <button class="delete-now-button" (click)="deletetour(tour.tourId)" *ngIf="isAdmin" value="delete">Delete</button>
                 <button class="update-now-button" (click)="updateTour()" *ngIf="isAdmin">Update</button>
@@ -25,8 +25,8 @@
             <div style="display:flex; flex-flow:column; gap:20px; margin:20px">
                 <h4>{{deletedTour.destination}}</h4>
                 <p><b>$</b> {{deletedTour.price}} </p>
-                <p><b>Start Date: </b>{{deletedTour.startDate  | date:"shortDate" }} </p>
-                <p><b>End Date: </b>{{deletedTour.endDate  | date:"shortDate" }} </p> 
+                <p><b>Start Date: </b>{{deletedTour.startDate  | date:"longDate" }} </p>
+                <p><b>End Date: </b>{{deletedTour.endDate  | date:"longDate" }} </p> 
                 <button class="recover-now-button" (click)="recoverTour()" *ngIf="!isAdmin">Recover</button>
             </div>
             <img src="{{deletedTour.content}}" alt="" width="250px" height="100%" style="align-self: flex-end;">

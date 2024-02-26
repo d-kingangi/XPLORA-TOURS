@@ -41,11 +41,12 @@ export const loginUser = async(req: Request, res: Response)=>{
             })            
 
             const token = jwt.sign(loginCredentials[0], process.env.SECRET as string, {
-                expiresIn: '3600s'
+                expiresIn: '36000000s'
             })
             
             return res.status(200).json({
-                message: "Logged in successfully", token 
+                message: "Logged in successfully", token,
+                ...loginCredentials[0]
             })
             
         }else{

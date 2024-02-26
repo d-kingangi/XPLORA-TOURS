@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { users } from '../../Interfaces/users.interface';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule , NavbarComponent],
+  imports: [ReactiveFormsModule, CommonModule , NavbarComponent, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
