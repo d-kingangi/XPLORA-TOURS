@@ -33,7 +33,7 @@
             <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="tex-sm text-red-500 mt-[3px]">Password must contain at least one number, one letter, and one special character.</div>
         </div>
         <div class="">
-            <input type="submit" [disabled]="registerForm.invalid" class="" value="Create Account">
+            <input type="submit" [disabled]="registerForm.invalid" class="" value="Create Account" data-cy="create-acc-btn">
         </div>
         <div>
             Already have an account? 

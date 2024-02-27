@@ -13,8 +13,8 @@
             <!-- <li routerLink="/view-adventures">View Adventures</li> -->
             <!-- <li> <a href="#/avaliable-tours">View Adventures</a></li> -->
             <!-- <li>Find Us</li> -->
-            <li routerLink="/register" *ngIf="!isLoggedIn">Register</li>
-            <li routerLink="/login" *ngIf="!isLoggedIn">Login</li>
+            <li routerLink="/register" *ngIf="!isLoggedIn" class="register">Register</li>
+            <li routerLink="/login" *ngIf="!isLoggedIn" class="login" data-cy="login">Login</li>
             <li (click)="logout()" *ngIf="isLoggedIn">Logout</li>
         </ul>      
     </div>

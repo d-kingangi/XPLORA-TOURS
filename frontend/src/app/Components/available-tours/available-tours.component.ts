@@ -58,9 +58,9 @@ export class AvailableToursComponent implements OnInit {
   }
 
   bookNow(tour: any) {
-    const token = this.authService.readToken; 
+    // const token = this.authService.readToken; 
   
-    this.authService.readToken(token).subscribe((currentUser: any) => {
+    this.authService.readToken().subscribe((currentUser: any) => {
       console.log('Current User:', currentUser);
   
       if (currentUser && currentUser.info && currentUser.info.userId) {

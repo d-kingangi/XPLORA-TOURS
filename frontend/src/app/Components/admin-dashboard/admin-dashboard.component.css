@@ -22,7 +22,7 @@
 }
 
 .accordion-content {
-  display: none;
+  display: block;
   padding: 10px;
   background-color:#02173a; 
   color: orange;
