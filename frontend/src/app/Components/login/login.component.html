@@ -13,7 +13,7 @@
     <div class="right-section">
         <div class="blurry-background"></div>
 
-        <div class="message" [ngClass]="{'success': successMsg, 'error': errorMsg}">
+        <div class="sucessMsg message" [ngClass]="{'success': successMsg, 'error': errorMsg}">
             {{ successMsg || errorMsg }}
           </div>
 
@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="form-input">
-                    <input type="submit" [disabled]="loginForm.invalid" value="Login" class="button-orange">
+                    <input type="submit" [disabled]="loginForm.invalid" value="Login" class="button-orange" id="login-btn">
                 </div>
             </form>
         </div>

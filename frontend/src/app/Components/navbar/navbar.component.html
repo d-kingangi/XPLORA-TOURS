@@ -15,7 +15,7 @@
             <!-- <li>Find Us</li> -->
             <li routerLink="/register" *ngIf="!isLoggedIn" class="register">Register</li>
             <li routerLink="/login" *ngIf="!isLoggedIn" class="login" data-cy="login">Login</li>
-            <li (click)="logout()" *ngIf="isLoggedIn">Logout</li>
+            <li (click)="logout()" *ngIf="isLoggedIn" >Logout</li>
         </ul>      
     </div>
 </div>

@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ### Get Users
 GET http://localhost:4100/users
-Authorization: Bearer YOUR_ACCESS_TOKEN
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTgzM2ZlNy1kZjhjLTRiZWQtODdjOS0yOTIzNDA4NDk0NjMiLCJmaXJzdG5hbWUiOiJHYXZpbiIsImxhc3RuYW1lIjoiV29vZCIsImVtYWlsIjoid29vZEBob29saS5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0RlbGV0ZWQiOmZhbHNlLCJjb250ZW50IjoiaW1hZ2UuY29tIiwiaWF0IjoxNzA5MTkxNzY2LCJleHAiOjE3NDUxOTE3NjZ9.1r0agyAwe-4jJUhIx80mK652Lnwua9Ab0RVi-dHHtHQ
 
 ### Update User
 PUT http://localhost:4100/users/update/uniqueUserId
