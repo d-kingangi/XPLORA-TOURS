@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ApiService } from './api.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing'
 import { users } from '../Interfaces/users.interface';
+import { expectedUsers } from './testdata/users';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -9,7 +10,7 @@ describe('ApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      import: {  HttpClientTestingModule}
+      imports: [ HttpClientTestingModule ]
     });
     service = TestBed.inject(ApiService);
     testingController = TestBed.inject(HttpTestingController)
@@ -25,13 +26,13 @@ describe('ApiService', () => {
       expect(users.length).toBe(1)
     })
 
-    const mockReq = testingController.expectOne('http://localhost:4100')
+    const mockReq = testingController.expectOne('http://localhost:4100/users')
     mockReq.flush(Object.values(expectedUsers))
-    expect(mockRequest.request.method).calledImmediatelyBefore('GET')
+    expect(mockRequest.request.method).toBe('GET')
   })
 
   it('gets user by Id', ()=>{
-    let id = '7822484g-242982482-i4i29209' //
+    let id = '7822484g-242982482-i4i29209' // pass userId
     service.getOneUserDetails(id).subscribe((user:any)=>{
       expect(user).toBeTruthy()
       expect(user.name).toBeTruthy('Duncan')
@@ -51,7 +52,7 @@ describe('ApiService', () => {
       password: "duncan"
     }
 
-    service.registerUser(mockUser).subscribe(res=>{
+    service.createUser(mockUser).subscribe(res=>{
       expect(res.message).toEqual('Account created successfully')
     })
 

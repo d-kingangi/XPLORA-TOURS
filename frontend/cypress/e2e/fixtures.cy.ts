@@ -51,7 +51,7 @@ describe('working with fixtues with multiple data', ()=>{
                         cy.visit('/login')
                     })
                 }else if (data.email == "wood@hooli.com" && data.password !=='^Migdyg$A9PF&6g68UU&ECq^'){
-                    cy.get('.loginbtn').click()
+                    cy.get('.login-btn').click()
                     cy.contains('Incorrect password')
                 }
             })
@@ -71,7 +71,7 @@ describe('Request without hitting backend', ()=>{
             }
         }).as('loginRequest')
 
-        cy.get('.loginBtn').click()
+        cy.get('.login-btn').click()
 
         cy.wait('@loginRequest').then(interception =>{
             expect( interception.request.body).to.exist;
